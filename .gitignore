@@ -1,0 +1,56 @@
+.DS_Store
+node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+package-lock.json
+*.zip
+/server/app/model
+/server/app/controller/user
+/server/app/controller/web/lianmeng
+/server/app/controller/web/default
+/server/app/controller/copy
+/server/app/router/web/lianmeng
+/server/app/service/copy
+/server/app/service/web/lianmeng
+/server/app/view/user
+/server/app/view/web/lianmeng
+/doc
+/API.MD
+/server/app/config/config.default copy.js
+/server/app/public/pdf-viewer/compressed.tracemonkey-pldi-09.pdf
+/server/app/view/web/qigong
+/server/app/public/template/default/font/chanyue-o.ttf
+/server/app/view/web/qigong
+
+
+/server/app/modules/home/view/angke
+/server/app/public/template/angke
+/server/app/modules/home/view/ribao
+/server/app/public/template/ribao
+/server/app/public/document
+
+
+
+/client/plus-member
+/server/app/plugins/plus-member
+/data/chancms.sql
+/server/app/public/doc

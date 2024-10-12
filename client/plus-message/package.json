@@ -1,0 +1,25 @@
+{
+  "name": "vue-to-js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "element-plus": "^2.8.0",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "vue": "^3.4.38",
+    "vue3-puzzle-vcode": "^1.1.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.2",
+    "terser": "^5.31.6",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.1",
+    "vite-plugin-css": "^1.0.4"
+  }
+}

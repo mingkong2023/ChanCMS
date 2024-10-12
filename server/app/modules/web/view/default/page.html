@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{cate.seoDescription || site.description}}">
+    <meta name="keywords" content="{{cate.seoKeywords || site.keywords}}" />
+    <meta property="og:title" content="{{cate.seoTitle || cate.name}}-{{site.name}}" />
+    <meta property="og:description" content="{{site.description}}" />
+    <title>{{article.title || cate.name}}-{{site.name}}</title>
+    {{include './common/meta.html'}}
+</head>
+
+
+<body class="bg-f8f8f8 pos-r">
+    <!-- 头部 -->
+    {{include './common/header.html'}}
+
+    <!-- 头条文章 -->
+    <main class="bg-f2f2f2 pt-10 pb-20 flex">
+
+        <div class="main center mt-10 flex gap-20">
+            <aside class="flex-1">
+                  <!-- tag标签 -->
+                  <section class="notices pd-20 mb-20 bg-fff">
+                    <h3 class="m-title border-dashed f-16 flex justify-between">tag标签</h3>
+                    <p class="mt-10">
+                        {{each tag}}
+                        <a class="el-tag mr-5 mb-5" href="/tags/{{$value.name}}.html"
+                            title="{{$value.name}}">{{$value.name}}</a>
+                        {{/each}}
+                    </p>
+                </section>
+
+                <!-- 广告 -->
+                {{if frag.ad}}
+                <section class="ad mb-20 bg-fff">
+                    {{@ frag.ad}}
+                </section>
+                {{/if}}
+
+                <!-- 单页栏目 -->
+                <section class="notices pos-s pd-20 mb-20 bg-fff" style="top:80px;z-index: 2;">
+                    <h3 class="m-title border-dashed f-16 flex justify-between bold">{{navSub.cate.name}}</h3>
+                    {{if data && data.length>0}}
+                    <ul class="mt-10">
+                        {{each data}}
+                        <li class="f-16 pt-4 pb-4 flex bold  pl-10">
+                            <a href="{{$value.path}}/page-{{$value.id}}.html"  title="{{$value.title}}">{{$value.title}}</a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </section>
+
+            </aside>
+
+            <!-- 最新文章 -->
+            <article class="article-index">
+                <!-- <div class="bg-fff radius-6 pd-15 mb-1 f-14 c-999">
+                    <i class="ico-20 ico-home pos-r t-3"></i>
+                    <a class="" href="" >首页</a> /
+                    <a class="c-666" href="" >nodejs开发</a> /
+                    express专题
+                </div> -->
+
+                <div class="bg-fff radius-6 pd-25 content">
+                    {{if article?.content}}
+                    <header class="border-b pos-r">
+                        <h2 class="f-26 c-252933  bold mt-10">{{article.title}}</h2>
+                        <p class="f-12 c-999 mt-5 mb-26">
+                            <span>
+                                <i class="ico-20 ico-time pos-r t-4"></i> {{article.updatedAt}}
+                                <i class="ico-20 ico-admin pos-r t-4 ml-4"></i> {{article.author}}
+                                <i class="ico-20 ico-view pos-r t-5 ml-4"></i> 阅读（{{article.pv}}）
+                                <!-- <i class="ico-20 ico-zan pos-r t-4 ml-4"></i>点赞（95） -->
+                            </span>
+                        </p>
+                    </header>
+                    <article id="article" class="article-cont f-17 lh-35">
+                        {{@ article.content}}
+                    </article>
+                    {{else}}
+                        <p class="mt-35 mb-35 f-30 text-c">暂无内容</p>
+                    {{/if}}
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- footer -->
+    {{include './common/footer.html'}}
+    <!-- 移动端导航 -->
+    {{include './common/wap-nav.html'}}
+    <div class="api ignore mb-20 mt-20 pd-20 bg-f2f2f2">
+        <h1>ChanCMS 当前页面数据：</h1>
+        <p class="mb-20">site-> {{site}} </p>
+        <p class="mb-20">nav-> {{nav}} </p>
+        <p class="mb-20">category-> {{category}}</p>
+        <p class="mb-20">friendlink-> {{friendlink}}</p>
+        <p class="mb-20">base_url-> {{base_url}}</p>
+        <p class="mb-20">frag--->{{frag}}</p>
+        <p class="mb-20">ad--->{{frag.ad}}</p>
+        <p class="mb-20">tag--->{{tag}}</p>
+        <p class="mb-20">position------>{{position}}</p>
+        <p class="mb-20">navSub------>{{navSub}}</p>
+        <p class="mb-20">list------>{{data}}</p>
+        <p class="mb-20">article------>{{article}}</p>
+    </div>
+    {{include './common/js.html'}}
+   
+</body>
+
+</html>
