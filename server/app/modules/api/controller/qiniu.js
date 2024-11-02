@@ -1,5 +1,6 @@
 const fs = require("fs");
 const {
+  config:{domain, bucket, secretKey, accessKey},
   modules: {
     api: {
       service: { qiniu },
@@ -24,9 +25,7 @@ class QiniuController {
   // 服务端直传七牛
   async upload(req, res, next) {
     try {
-      const {
-        config: { domain, bucket, secretKey, accessKey },
-      } = req.app.locals;
+     
       let file = req.file || req.files[0];
       const { originalname, filename, path } = file;
       const uploadResult = await qiniu.upload(file, {

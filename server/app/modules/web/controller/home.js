@@ -1,4 +1,3 @@
-const dayjs = require("dayjs");
 const {
   modules: {
     web: {
@@ -9,8 +8,9 @@ const {
     },
   },
   helper: {
-    utils: { pages },
+    utils: { pages,getChildrenId, treeById, filterFields,  htmlDecode  },
   },
+  config:{template},
 } = Chan;
 
 const ArticleService = article;
@@ -21,7 +21,6 @@ class HomeController {
     try {
       const {
         nav,
-        config: { template },
       } = req.app.locals;
 
       let result = {};
@@ -51,13 +50,6 @@ class HomeController {
   // 列表页
   async list(req, res, next) {
     try {
-      const {
-        config: { template },
-      } = req.app.locals;
-      const {
-        utils: { getChildrenId, treeById, filterFields, pages },
-      } = Chan.helper;
-
       const { cate, current, cid } = req.params;
       const currentPage = parseInt(current) || 1;
       const pageSize = 10;
@@ -110,13 +102,7 @@ class HomeController {
   // 详情页
   async article(req, res, next) {
     try {
-      const {
-        config: { template },
-      } = req.app.locals;
-      const {
-        utils: { getChildrenId, treeById, htmlDecode },
-      } = Chan.helper;
-
+     
       let { id } = req.params;
       const { category } = req.app.locals;
 
@@ -141,13 +127,7 @@ class HomeController {
       const cid = article.cid || "";
       // 内容标签
       article.tags = await common.fetchTagsByArticleId(id);
-      // 时间
-      article.createdAt = dayjs(article.createdAt).format(
-        "YYYY-MM-DD HH:mm:ss"
-      );
-      article.updatedAt = dayjs(article.updatedAt).format(
-        "YYYY-MM-DD HH:mm:ss"
-      );
+    
       article.content = htmlDecode(article.content);
       // 扩展字段
       Object.getOwnPropertyNames(article.field).forEach(function (key) {
@@ -190,13 +170,6 @@ class HomeController {
   // 单页
   async page(req, res, next) {
     try {
-      const {
-        config: { template },
-      } = req.app.locals;
-      const {
-        utils: { getChildrenId, treeById },
-      } = Chan.helper;
-
       const { cate, id } = req.params;
       const { category } = req.app.locals;
 
@@ -241,12 +214,7 @@ class HomeController {
 
       //没找到文章 去404
       if (Object.keys(article).length > 0) {
-        article.createdAt = dayjs(article.createdAt).format(
-          "YYYY-MM-DD HH:mm:ss"
-        );
-        article.updatedAt = dayjs(article.updatedAt).format(
-          "YYYY-MM-DD HH:mm:ss"
-        );
+      
         // 当前位置
         position = treeById(article.cid, category);
         // 增加数量
@@ -271,10 +239,6 @@ class HomeController {
   // 搜索页
   async search(req, res, next) {
     try {
-      const {
-        config: { template },
-      } = req.app.locals;
-
       const { keywords, id } = req.params;
       const page = id || 1;
       const pageSize = 10;
@@ -289,7 +253,6 @@ class HomeController {
           new RegExp(keywords, "gi"),
           `<span class='c-red'>${keywords}</span>`
         );
-        ele.updatedAt = dayjs(ele.updatedAt).format("YYYY-MM-DD HH:mm:ss");
       });
       await res.render(`${template}/search.html`, {
         keywords,
@@ -305,9 +268,7 @@ class HomeController {
   // tag
   async tag(req, res, next) {
     try {
-      const {
-        config: { template },
-      } = req.app.locals;
+  
       const { path, id } = req.params;
       const page = id || 1;
       const pageSize = 10;
@@ -317,9 +278,7 @@ class HomeController {
       let { count } = data;
       let href = "/tag/" + path;
       let pageHtml = pages(page, count, pageSize, href);
-      data.list.forEach((ele) => {
-        ele.updatedAt = dayjs(ele.updatedAt).format("YYYY-MM-DD HH:mm:ss");
-      });
+     
       await res.render(`${template}/tag.html`, { data, path, pageHtml });
     } catch (error) {
       console.error(error);

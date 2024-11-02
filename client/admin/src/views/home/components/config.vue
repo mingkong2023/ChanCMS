@@ -20,49 +20,6 @@
             <el-radio value="2">七牛云</el-radio>
           </el-radio-group>
         </el-form-item>
-
-        <el-form-item label="文件缓存">
-          <el-radio-group v-model="set.maxAge" class="ml-4">
-            <el-radio value="1">开启</el-radio>
-            <el-radio value="2">关闭</el-radio>
-          </el-radio-group>
-
-          <el-popover
-            placement="top-start"
-            title="静态资源缓存"
-            :width="200"
-            trigger="hover"
-            content="css,js,img等模板静态资源缓存。建议：线上环境开启"
-          >
-            <template #reference>
-              <el-icon class="ml-20 pointer c-165dff"
-                ><QuestionFilled
-              /></el-icon>
-            </template>
-          </el-popover>
-        </el-form-item>
-
-        <el-form-item label="数据缓存">
-          <el-radio-group v-model="set.dataCache" class="ml-4">
-            <el-radio value="1">开启</el-radio>
-            <el-radio value="2">关闭</el-radio>
-          </el-radio-group>
-
-          <el-popover
-            placement="top-start"
-            title="全局模板数据缓存"
-            :width="200"
-            trigger="hover"
-            content="站点，分类，配置，友情链接，碎片，标签等数据。建议：线上环境开启"
-          >
-            <template #reference>
-              <el-icon class="ml-20 pointer c-165dff"
-                ><QuestionFilled
-              /></el-icon>
-            </template>
-          </el-popover>
-        </el-form-item>
-
         <el-form-item>
           <el-button type="primary" @click="submit('set')">保存</el-button>
         </el-form-item>
@@ -83,8 +40,6 @@ export default {
       folderList: [],
       set: {
         template: "default",
-        maxAge: "1",
-        dataCache: "1",
         appid: "",
         secret: "",
         accessKey: "", //ak

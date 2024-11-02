@@ -305,7 +305,8 @@ exports.getHtmlFilesSync = (folderPath) => {
 exports.getIp = (req) => {
   let ip = 
   req.headers['x-forwarded-for'] ||
-	req.ip ||
+	req.ip || 
+    req.headers['x-real-ip'] ||
 	req?.connection?.remoteAddress ||
 	req?.socket?.remoteAddress ||
 	req?.connection?.socket?.remoteAddress ||

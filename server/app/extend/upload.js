@@ -2,13 +2,12 @@ const multer = require("multer");
 const dayjs = require("dayjs");
 const fs = require("fs");
 const path = require("path");
-
+const {
+  config: { template },
+} = Chan;
 const storage = multer.diskStorage({
   //目的地
   destination: async function (req, file, cb) {
-    const {
-      config: { template },
-    } = req.app.locals;
     let date = dayjs(Date.now()).format("YYYY/MM/DD");
     let dir = path.join(`app/public/uploads/${template}`, date);
     function mkdirsSync(dirname) {

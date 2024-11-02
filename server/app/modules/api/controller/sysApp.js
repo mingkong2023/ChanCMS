@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const {
+  config: { APP_PATH, template },
   modules: {
     api: {
       service: { sysApp },
@@ -26,9 +27,6 @@ class SysAppController {
   // 查
   async getViews(req, res, next) {
     try {
-      const {
-        config: { APP_PATH, template },
-      } = req.app.locals;
       const viewsPath = path.join(APP_PATH, `/modules/web/view/${template}`);
       const data = getHtmlFilesSync(viewsPath);
       res.json({ ...success, data: data });
@@ -42,9 +40,6 @@ class SysAppController {
    */
   async folder(req, res, next) {
     try {
-      const {
-        config: { APP_PATH },
-      } = req.app.locals;
       const dir = path.join(APP_PATH, `/modules/web/view/`);
       const data = fs.readdirSync(dir);
       res.json({ ...success, data: data });

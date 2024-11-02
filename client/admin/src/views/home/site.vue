@@ -26,12 +26,12 @@
 
           <el-form-item prop="email" label="站长邮箱">
             <el-input v-model="info.email" :rules="[
-                {
-                  type: 'email',
-                  message: '请输入正确的邮箱',
-                  trigger: ['blur', 'change'],
-                },
-              ]"></el-input>
+              {
+                type: 'email',
+                message: '请输入正确的邮箱',
+                trigger: ['blur', 'change'],
+              },
+            ]"></el-input>
           </el-form-item>
 
           <el-form-item prop="icp" label="ICP备案号">
@@ -52,18 +52,18 @@
       <el-tab-pane label="SEO设置" class="mt-20" name="second">
         <el-form ref="seo" :model="seo" label-width="84px">
           <el-form-item label="标题" prop="title" :rules="[
-      {
-        required: true,
-        message: '请输入网站标题',
-        trigger: 'blur',
-      },
-      {
-        min: 2,
-        max: 20,
-        message: '长度在 2 到 20 个字符',
-        trigger: 'blur',
-      },
-    ]">
+            {
+              required: true,
+              message: '请输入网站标题',
+              trigger: 'blur',
+            },
+            {
+              min: 2,
+              max: 20,
+              message: '长度在 2 到 20 个字符',
+              trigger: 'blur',
+            },
+          ]">
             <el-input v-model="seo.title"></el-input>
           </el-form-item>
 
@@ -72,13 +72,13 @@
           </el-form-item>
 
           <el-form-item label="描述" prop="description" :rules="[
-      {
-        min: 2,
-        max: 255,
-        message: '字数限制255',
-        trigger: 'blur',
-      },
-    ]">
+            {
+              min: 2,
+              max: 255,
+              message: '字数限制255',
+              trigger: 'blur',
+            },
+          ]">
             <el-input type="textarea" :rows="3" class="textarea" v-model="seo.description"></el-input>
           </el-form-item>
 

@@ -17,7 +17,7 @@ class SysConfigService extends BaseService {
   async config() {
     try {
       let res = await knex
-        .select(["template", "uploadWay", "maxAge", "dataCache"])
+        .select(["template", "uploadWay"])
         .from(this.model)
         .limit(1);
       return res[0];

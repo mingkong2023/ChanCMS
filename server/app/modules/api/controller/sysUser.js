@@ -16,7 +16,6 @@ class SysUserController {
   // 登录
   async login(req, res, next) {
     try {
-      const { config } = req.app.locals;
       let { username, password } = req.body;
       const pass = md5(password + config.secretcms.key);
       const result = await sysUser.find(username, pass);

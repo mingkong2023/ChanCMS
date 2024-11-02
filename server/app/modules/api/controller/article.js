@@ -7,7 +7,7 @@ const {
       service: { article },
     },
   },
-  config: { APP_PATH },
+  config: { APP_PATH,  version, appName, port, versionTime, author },
   helper: {
     utils: { filterBody, delImg },
     api: { success },
@@ -150,9 +150,7 @@ class ArticleController {
 
   async tongji(req, res, next) {
     try {
-      const {
-        config: { version, appName, port, versionTime, author },
-      } = req.app.locals;
+      
       const data = await article.tongji();
       res.json({
         ...success,

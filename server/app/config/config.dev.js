@@ -3,18 +3,24 @@ const config = { ...base };
 
 //mysql配置
 config.database = {
-  // client: "mysql2", 默认mysql
   host: "localhost",
-  // port: "3306",默认3306
   user: "root",
   password: "123456",
-  database: "chanyue",
-  // charset: "utf8mb4",
+  database: "chancms",
 };
 
+//web端口
+config.port = "81"; 
+
+//静态资源
+config.static = [{
+  prefix: "/public/",
+  dir:"app/public",
+  maxAge: 0,
+}];
 
 //sql debug
-config.debug = false;
+config.SqlDebug = false;
 
 // jwt 配置
 config.token = {
@@ -24,7 +30,7 @@ config.token = {
 
 // md5 加盐
 config.secretcms = {
-  key: "chanyue-cms",
+  key: "ChanCMS",
 };
 
 //cors
@@ -35,6 +41,7 @@ config.cors = {
 //多个views
 config.views = []; //path.join(config.appRoot, `modules/web/view`)
 
+// 模板缓存 dev 环境不缓存 prod 环境缓存
 config.env = "dev";
 
 config.logger = {

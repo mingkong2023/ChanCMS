@@ -1,5 +1,6 @@
 const dayjs = require("dayjs");
 const {
+  config,
   modules: {
     api: {
       service: { loginLog },
@@ -15,7 +16,6 @@ class LoginLogController {
   // 增
   async create(req, res, next) {
     try {
-      const { config } = req.app.locals;
       const token = req.cookies.token;
       const user = await getToken(token, config.token.KEY);
       let body = {

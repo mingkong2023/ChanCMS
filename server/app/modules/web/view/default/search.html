@@ -44,7 +44,7 @@
 
                                     </h3>
                                     <p class="f-12 c-bfbfbf mb-8">
-                                        <i class="ico-20 ico-time pos-r t-4"></i> {{$value.createdAt}}
+                                        <i class="ico-20 ico-time pos-r t-4"></i> {{ dateFormat($value.createdAt, 'YYYY-MM-DD HH:mm:ss') }}
                                         <i class="ico-20 ico-admin pos-r t-4 ml-4"></i> {{$value.author ||'admin'}}
                                         <i class="ico-20 ico-view pos-r t-5 ml-4"></i> 阅读（{{$value.pv}}）
                                         <!-- <i class="ico-20 ico-zan pos-r t-4 ml-4"></i>点赞（95） -->

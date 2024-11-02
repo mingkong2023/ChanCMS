@@ -20,7 +20,7 @@
     "pinia": "^2.2.2",
     "pinia-plugin-persist": "^1.0.0",
     "pinyin-pro": "^3.24.2",
-    "saduocss": "^1.2.1",
+    "saduocss": "^1.2.5",
     "vite-plugin-vue-setup-extend": "^0.4.0",
     "vue": "^3.4.38",
     "vue-cropper": "^1.1.4",

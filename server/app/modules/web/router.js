@@ -11,9 +11,10 @@ module.exports = (opt) => {
   } = opt;
 
   router.use(adapter());
+  router.use(init());
 
   // 首页模板
-  router.get("/", init(), controller.home.index);
+  router.get("/",controller.home.index);
 
   // 分类
   router.get(
@@ -28,7 +29,6 @@ module.exports = (opt) => {
       "/:cate3/:cate2/:cate1/:cate/index.html",
       "/:cate3/:cate2/:cate1/:cate/index:current.html",
     ],
-    init(),
     controller.home.list
   );
 
@@ -44,7 +44,6 @@ module.exports = (opt) => {
       "/:cate2/:cate1/:cate/article-:id.html",
       "/:cate3/:cate2/:cate1/:cate/article-:id.html",
     ],
-    init(),
     controller.home.article
   );
 
@@ -61,21 +60,18 @@ module.exports = (opt) => {
       "/:cate2/:cate1/:cate/page-:id.html",
       "/:cate3/:cate2/:cate1/:cate/page-:id.html",
     ],
-    init(),
     controller.home.page
   );
 
   // 搜索页
   router.get(
     ["/search/:keywords.html", "/search/:keywords/:id.html"],
-    init(),
     controller.home.search
   );
 
   // tag列表页
   router.get(
     ["/tags/:path.html", "/tags/:path/:id.html"],
-    init(),
     controller.home.tag
   );
 

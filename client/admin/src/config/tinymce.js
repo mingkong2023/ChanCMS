@@ -37,14 +37,14 @@ export let tinymceSet = {
   custom_images_upload_param: {},
   height: 550, // editor 高度
   toolbar:
-    "undo redo| bold italic underline strikethrough | forecolor backcolor fontsize | blocks alignleft aligncenter alignright alignjustify   |numlist bullist | image media table |   link unlink  | indent outdent | superscript subscript | removeformat | code codesample |  fullscreen preview",
+    "undo redo|bold forecolor backcolor fontsize | numlist bullist | alignleft aligncenter alignright | code codesample link unlink |image media table | blocks italic underline strikethrough alignjustify  | indent outdent | superscript subscript | removeformat | fullscreen preview",
   toolbar_mode: "sliding",
   quickbars_selection_toolbar:
     "removeformat | bold italic underline strikethrough | fontsize forecolor backcolor",
   plugins:
     "link image media table lists fullscreen quickbars codesample preview code fullscreen",
   font_size_formats:
-    "12px 14px 16px 18px 20px 22px 24px 26px 28px 30px 32px 34px 36px 38px 40px 42px 44px 46px 48px 50px 52px",
+    "12px 13px 14px 15px 16px 17px 18px 19px 20px 21px 22px 23px 24px 25px 26px 27px 28px 29px 30px 31px 32px 33px 34px 35px 36px 37px 38px 39px 40px 41px 42px 43px 44px 45px 46px 37px 48px 49px 50px 51px 52px",
   link_default_target: "_blank",
   //其他配置参数
 
@@ -67,4 +67,5 @@ export let tinymceSet = {
     { text: "C#", value: "csharp" },
     { text: "C++", value: "cpp" },
   ],
+  extended_valid_elements: "a[referrerpolicy|href|target|title|class|id|style],img[referrerpolicy|src|alt|width|height|class|id|style]", //允许a标签
 };

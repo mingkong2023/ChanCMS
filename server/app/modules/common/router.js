@@ -30,4 +30,5 @@ module.exports = (opt) => {
 
   //配置前缀
   app.use("/api-chancms/v1", router);
+
 };

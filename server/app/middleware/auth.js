@@ -2,12 +2,12 @@
 let {
   utils: { getToken },
 } = Chan.helper;
+let {config} = Chan;
 
 module.exports = () => {
   return async (req, res, next) => {
     const token = req.cookies.token || req.headers.auth || "";
     if (token) {
-      let { config } = req.app.locals;
       try {
         await getToken(token, config.token.KEY);
         await next();

@@ -56,10 +56,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
 
 .el-menu {
   border-right: 0px;

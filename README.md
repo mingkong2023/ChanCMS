@@ -135,6 +135,17 @@ server 部署代码
  如果喜欢我们的项目，请点个 Star。
  微信群交流请联系微信: `yanyutao2014` 🧒 👧 👱  🧔 👴
 
+## 许可证
+
+本项目采用 [Apache License 2.0](LICENSE) 许可证。详情请参阅 [LICENSE](LICENSE) 文件。
+
+## 警告
+
+* 禁止用于任何非法商业用途或其他任何违法或不道德的行为。
+* 不当使用本项目中的代码或资源而导致的任何直接或间接损失，项目维护者及贡献者概不负责。
+* 请尊重法律和道德规范，合理合法地使用本项目的资源。
+* 任何违反上述规定的行为都将受到法律追究。
+
 ## 管理后台部分截图
 
 ![后台展示](https://gitee.com/yanyutao0402/chanyue-cms/raw/master/server/app/public/template/default/img/info.png)
