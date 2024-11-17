@@ -1,3 +1,6 @@
+
+# [English](https://github.com/mingkong2023/ChanCMS/blob/main/README-EN.MD)| [简体中文](https://github.com/mingkong2023/ChanCMS/blob/main/README.MD)
+
 # ChanCMS Content Management System
 
 ChanCMS is a high-quality, practical CMS system developed based on Node, Express, MySQL, and Vue3. It's lightweight, flexible, stable, high-performing, and easily extensible, making development simpler.
