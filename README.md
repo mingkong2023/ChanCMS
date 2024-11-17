@@ -131,6 +131,7 @@ server 部署代码
 ## ❤️项目关注
 
 * **码云：<https://gitee.com/yanyutao0402/chanyue-cms>**
+* **GitHub(备份)：<https://github.com/mingkong2023/ChanCMS>**
 
 ## 👴项目交流
 

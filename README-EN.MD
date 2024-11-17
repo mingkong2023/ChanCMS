@@ -129,6 +129,7 @@ server deployment code
 ## ❤️ Project Engagement
 
 * **Gitee: <https://gitee.com/yanyutao0402/chanyue-cms>**
+* **GitHub(backup)：<https://github.com/mingkong2023/ChanCMS>**
 
 ## 👴 Project Communication
 
