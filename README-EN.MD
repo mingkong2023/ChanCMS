@@ -1,5 +1,5 @@
 
-# [English](https://github.com/mingkong2023/ChanCMS/blob/main/README-EN.MD)| [简体中文](https://github.com/mingkong2023/ChanCMS/blob/main/README.MD)
+[English](https://github.com/mingkong2023/ChanCMS/blob/main/README-EN.MD)| [简体中文](https://github.com/mingkong2023/ChanCMS/blob/main/README.MD)
 
 # ChanCMS Content Management System
 
