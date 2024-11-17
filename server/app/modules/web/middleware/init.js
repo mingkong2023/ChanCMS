@@ -20,6 +20,7 @@ module.exports = () => {
       let sysconfig = await sysApp.find();
       const { domain } = sysconfig;
       let _template = sysconfig.template || template;
+
       // 站点
       const _site = await site.find();
       // 分类
@@ -47,7 +48,7 @@ module.exports = () => {
         frag: _frag,
         tag: _tag,
       };
-      Chan.config.template = template || defaultTemplate;
+      Chan.config.template = _template;
       // env === "dev" && console.log("locals-config", req.app.locals);
       await next();
     } catch (error) {

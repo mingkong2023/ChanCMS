@@ -5,14 +5,13 @@ class SysUserService extends BaseService {
   model = "sys_user";
 
   // 登录
-  async find(username, password) {
+  async find(username ) {
     try {
       const res = await knex(`${this.model}`)
         .where({
           username: `${username}`,
-          password: `${password}`,
         })
-        .select(["id", "username", "status"]);
+        .select(["id", "username","password", "status"]);
       return res[0];
     } catch (err) {
       console.error(err);

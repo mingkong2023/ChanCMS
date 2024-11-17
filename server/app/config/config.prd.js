@@ -2,12 +2,15 @@ const base = require("./config.base.js");
 const config = { ...base };
 
 //mysql配置
-config.database = {
-  host: "localhost",
-  user: "root",
-  password: "123456",
-  database: "chancms",
-};
+config.db = [
+  {
+    host: "localhost",
+    user: "root",
+    password: "123456",
+    database: "chancms",
+    debug:false
+  }
+];
 
 //web端口
 config.port = "81"; 
@@ -19,18 +22,16 @@ config.static = [{
   maxAge: 0,
 }];
 
-//sql debug
-config.SqlDebug = false;
-
 // jwt 配置
 config.token = {
   KEY: "ChanCMS",
   TIME: "1d",
+  REFRESH:false //是否开启刷新token
 };
 
-// md5 加盐
+// bcrypt 加盐
 config.secretcms = {
-  key: "ChanCMS",
+  key: 10,
 };
 
 //cors

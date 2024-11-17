@@ -7,7 +7,7 @@ const {
     },
   },
   helper: {
-    utils: { setToken, getToken, md5 },
+    utils: { setToken, getToken, bcrypt },
     api: { success, fail },
   },
 } = Chan;
@@ -17,10 +17,10 @@ class SysUserController {
   async login(req, res, next) {
     try {
       let { username, password } = req.body;
-      const pass = md5(password + config.secretcms.key);
-      const result = await sysUser.find(username, pass);
-      if (result) {
-        const { id, status } = result;
+      const user = await sysUser.find(username);
+      const match = await bcrypt.compare(password, user.password);
+      if (user && match) {
+        const { id, status } = user;
         // 设置token
         const token = setToken(
           { uid: id, username },
@@ -30,7 +30,7 @@ class SysUserController {
         const data = { status, username, token };
         res.json({ ...success, data: data });
       } else {
-        res.json({ ...fail, msg: "登录失败" });
+        res.json({ ...fail, msg: "用户名或密码错误！" });
       }
     } catch (err) {
       console.log(err);
@@ -42,7 +42,7 @@ class SysUserController {
   async create(req, res, next) {
     try {
       const body = req.body;
-      body.password = md5(body.password + config.secretcms.key);
+      body.password = await bcrypt.hash(body.password, config.secretcms.key);
       const data = await sysUser.create(body);
       res.json({ ...success, data: data });
     } catch (err) {
@@ -65,7 +65,7 @@ class SysUserController {
   async update(req, res, next) {
     try {
       const body = req.body;
-      body.password = md5(body.password + config.secretcms.key);
+      body.password = await bcrypt.hash(body.password, config.secretcms.key);
       const data = await sysUser.update(body);
       res.json({ ...success, data: data });
     } catch (err) {

@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require('bcryptjs');
 
 // 无限极分类tree
 exports.tree = function tree(arr, pid = 0) {
@@ -339,3 +340,6 @@ exports.htmlDecode = (str) => {
   s = s.replace(/&quot;/g, '"');
   return s;
 };
+
+
+exports.bcrypt = bcrypt

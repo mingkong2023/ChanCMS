@@ -2,35 +2,38 @@ const base = require("./config.base.js");
 const config = { ...base };
 
 //mysql配置
-config.database = {
-  host: "localhost",
-  user: "root",
-  password: "123456",
-  database: "chancms",
-};
+config.db = [
+  {
+    host: "localhost",
+    user: "root",
+    password: "123456",
+    database: "chancms",
+    debug:false
+  }
+];
 
 //web端口
-config.port = "81"; 
+config.port = "81";
 
 //静态资源
-config.static = [{
-  prefix: "/public/",
-  dir:"app/public",
-  maxAge: 0,
-}];
-
-//sql debug
-config.SqlDebug = false;
+config.static = [
+  {
+    prefix: "/public/",
+    dir: "app/public",
+    maxAge: 0,
+  },
+];
 
 // jwt 配置
 config.token = {
   KEY: "ChanCMS",
   TIME: "1d",
+  REFRESH:false //是否开启刷新token
 };
 
-// md5 加盐
+// bcrypt 加盐
 config.secretcms = {
-  key: "ChanCMS",
+  key: 10,
 };
 
 //cors

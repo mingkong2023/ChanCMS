@@ -10,7 +10,7 @@ const {
   helper: {
     utils: { pages,getChildrenId, treeById, filterFields,  htmlDecode  },
   },
-  config:{template},
+
 } = Chan;
 
 const ArticleService = article;
@@ -20,7 +20,7 @@ class HomeController {
   async index(req, res, next) {
     try {
       const {
-        nav,
+        nav,template
       } = req.app.locals;
 
       let result = {};
@@ -39,7 +39,6 @@ class HomeController {
       if (nav.length > 0 && nav[0].pinyin == "home" && nav[0].listView) {
         defaultView = nav[0].listView;
       }
-
       res.render(`${template}/${defaultView}`, { ...result, article });
     } catch (error) {
       console.error(error);
@@ -50,6 +49,9 @@ class HomeController {
   // 列表页
   async list(req, res, next) {
     try {
+      const {
+        template
+      } = req.app.locals;
       const { cate, current, cid } = req.params;
       const currentPage = parseInt(current) || 1;
       const pageSize = 10;
@@ -63,7 +65,7 @@ class HomeController {
       //获取栏目id
       const id = cid || navSub.cate.id || "";
       if (!id) {
-        res.redirect("/404.html");
+        await res.render(`${template}/404.html`);
         return;
       }
 
@@ -102,7 +104,9 @@ class HomeController {
   // 详情页
   async article(req, res, next) {
     try {
-     
+      const {
+        template
+      } = req.app.locals;
       let { id } = req.params;
       const { category } = req.app.locals;
 
@@ -111,7 +115,7 @@ class HomeController {
       }
 
       if (!id) {
-        res.redirect("/404.html");
+        await res.render(`${template}/404.html`);
         return;
       }
 
@@ -119,7 +123,7 @@ class HomeController {
       const article = await ArticleService.detail(id);
 
       if (!article) {
-        res.redirect("/404.html");
+        await res.render(`${template}/404.html`);
         return;
       }
 
@@ -170,8 +174,9 @@ class HomeController {
   // 单页
   async page(req, res, next) {
     try {
+
       const { cate, id } = req.params;
-      const { category } = req.app.locals;
+      const { category,template } = req.app.locals;
 
       // 当前栏目和当前栏目下所有子导航
       let cid = "";
@@ -180,7 +185,7 @@ class HomeController {
       let position = {};
 
       if (!id && !cate) {
-        res.redirect("/404.html");
+        await res.render(`${template}/404.html`);
         return;
       }
 
@@ -201,7 +206,7 @@ class HomeController {
 
       //没找到栏目 去404
       if (!cid) {
-        res.redirect("/404.html");
+        await res.render(`${template}/404.html`);
         return;
       }
 
@@ -239,6 +244,7 @@ class HomeController {
   // 搜索页
   async search(req, res, next) {
     try {
+      const {template } = req.app.locals;
       const { keywords, id } = req.params;
       const page = id || 1;
       const pageSize = 10;
@@ -268,7 +274,7 @@ class HomeController {
   // tag
   async tag(req, res, next) {
     try {
-  
+      const {template } = req.app.locals;
       const { path, id } = req.params;
       const page = id || 1;
       const pageSize = 10;
