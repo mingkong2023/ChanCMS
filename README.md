@@ -1,19 +1,17 @@
-[English](https://github.com/mingkong2023/ChanCMS/blob/main/README-EN.MD)| [简体中文](https://github.com/mingkong2023/ChanCMS/blob/main/README.MD)
-
 # ChanCMS内容管理系统
 
-ChanCMS是一款基于Node、Express、MySQL、Vue3研发的高质量实用型CMS系统。轻量、灵活、稳定、高性能、易扩展，让开发更简单。
+ChanCMS是一款基于Node、Express5、MySQL、Vue3研发的高质量实用型CMS系统。轻量、灵活、稳定、高性能、易扩展，让开发更简单。
 
 ## 🌈系统特色
 
 * 自研。基于自研chanjs轻量级mvc框架实现，轻量、灵活、稳定、高性能、可持续。
 * SEO。专注于`seo`,伪静态`html`和拼音导航，灵活设置关键词和描述。
 * 安全。基于`knex`,高防`sql`注入，接口权限校验，为安全提供保障。
-* 灵活。碎片功能，支持零碎文案配置，方便各类灵活文案配置。
+* 灵活。JSON配置按需生成页面模板数据。碎片功能，支持零碎文案配置，方便各类灵活文案配置。
 * 高扩展。支持扩展模型，字段配置，可动态生成表，超强扩展。
 * 模块化。一切模块相互独立，互不干扰。
 * 插件化。灵活开发，支持完整功能模块。
-* 无头cms，为多端提供接口支持。
+* 无头cms，为多端（微信，app，小程序，h5）提供接口支持。
 
 ## 🚧功能介绍
 
@@ -37,90 +35,90 @@ ChanCMS是一款基于Node、Express、MySQL、Vue3研发的高质量实用型CM
 
 ## ⛱️软件架构
 
-**client技术栈**
-
-后台管理界面admin
-
-* vue3
-* vue-router
-* pina
-* element-plus
-* vite4
-* tinymce
-  
-**服务端技术栈**
-
 * nodejs v20.16.0+
-* express 4.18+
+* express 5.1+
 * mysql v5.7.26
 * knex (sql操作)
 * art-tempate v4.13.2+
-* pm2   v5.2.2
-* jwt  
+* pm2 v5.2.2
+* jwt
 * pm2 (prd)
 * nodemon (dev)
-  
+
 ### 项目架构
 
-```
-server 部署代码
+```JavaScript
+|- data
 |- app
     |- config
     |- extend 
     |- middleware 
     |- modules
-      |-api 后台api
+        |-api 通用api，提供给h5 app 小程序等调用 
         |-- controller
         |-- service
         |-- middleware(可选)
         |-- router.js
-      |-home 模板渲染
-        |-- controller
-        |-- middleware(可选)
-        |-- service
-        |-- view
-        |-- router.js
-      |-common 通用api，提供给h5 app 小程序等调用
+        |-web 模板渲染
         |-- controller
         |-- middleware(可选)
         |-- service
         |-- view
         |-- router.js
-    |- plugins 
+        |-base 基础模块RBAC 权限管理
+        |-- controller
+        |-- middleware(可选)
+        |-- service
+        |-- view
+        |-- router.js
+        |-cms 后台cms接口
+   |- plugins 
         |- plus-pdf 插件——pdf按需加载
-          |-- controller
-          |-- service(可选)
-          |-- middleware(可选)
-          |-- router.js
+        |-- controller
+        |-- service(可选)
+        |-- middleware(可选)
+        |-- router.js
         |- plus-wechat 插件——微信小程序登录
-          |-- controller
-          |-- service(可选)
-          |-- middleware(可选)
-          |-- router.js
-        ***  
-    |- public
-    |- utils
-    |- router.js
-  app.js
-  ```
+        |-- controller
+        |-- service(可选)
+        |-- middleware(可选)
+        |-- router.js
+  *** 
+ |- public
+ |- utils
+ |- router.js
+ app.js
+ ```
 
-### 🍅️案例
+* **注:ChanCMS自带基于vue3+element-plus+js研发的后台管理界面,如果不满足你编码风格，如native等其它UI，或热衷于如react + antd +TS技术，可以自行调用接口进行二次开发**
+* **后台管理ChanAdmin源码以及接口参考 [https://gitee.com/yanyutao0402/ChanAdmin](https://gitee.com/yanyutao0402/ChanAdmin)**
 
-* 案例一   [香港日报](http://www.hongkongdaily.net/)
-* 案例二   [国际健康健美长寿论坛](http://www.internationjms.cn/)
-* 案例三   [世界大健康运动联盟](http://www.worldhealthgames.com/)
-* 案例四   [世界气功网](http://www.shijieqigong.com/)
-* 案例五   [诺德房产](https://www.nuodefangchan.com/)
-* 案例六   [蝌蚪云](https://kd-yun.top/)
-* 案例七   [昂翊信息](http://www.angyi-iot.com/)
-* 案例八   [萌狮换电](http://www.51mshd.com/)
-* 案例九   [七弈国象](https://doc.7yi.link/)
-* 案例十   [北京辉达环保科技有限公司](http://www.huidaep.com/)
-<!-- * 案例十   [超前端](https://zoye.top/) -->
-* 演示站1  [雅俗共赏](http://www.cqsmservices.cn/)
-* 演示站2 [简游资讯](http://118.89.190.101:81/)
-* 演示站3  [前端小栈• 禅悦](http://122.112.172.87:81/)
-* 演示站4  [ChanCMS](http://140.246.2.93:81/)
+### 案例🍅️
+
+* [北京诺丰科技](http://www.novontrade.com/ )
+* [北京智慧城市供需对接平台](https://gongxudj.com/#/headerNav/newHome)
+* [上海昂翊信息](http://www.angyi-iot.com/)
+* [广东天波股份](https://sec.telpo.cn/)
+* [广东HANSA中国](http://www.hansa-asia.com/)
+* [武汉微科智汇](http://www.whwkzh.cn/)
+* [浙江金卡实业](http://zjjksy.com/)
+* [浙江华宇科技](http://www.kinka.net.cn/)
+* [西安圣豆电子](https://www.sundaytek.com/)
+* [石家庄诺德房产](https://www.nuodefangchan.com/)
+* [山西蝌蚪云](https://kd-yun.top/)
+* [香港日报](http://www.hongkongdaily.net/)
+* [国际健康健美长寿论坛](http://www.internationjms.cn/)
+* [世界大健康运动联盟](http://www.worldhealthgames.com/)
+* [世界气功网](http://www.shijieqigong.com/)
+* [香港大湾区](https://hk.bossyun.com/)
+* [七弈国象](https://doc.7yi.link/)
+* [有道IT官网](http://www.wmjtyd.net/)
+<!-- * [萌狮换电](http://www.51mshd.com/) -->
+<!-- * [历史人物网](https://ancestries.cn/) -->
+<!-- * [同宇宙官网](http://www.zdmedia.com.cn:81/) -->
+<!-- * 十 [超前端](https://zoye.top/) -->
+
+* 演示站1 [雅俗共赏](http://www.cqsmservices.cn/)
 
 ## 👵开发文档
 
@@ -131,12 +129,11 @@ server 部署代码
 ## ❤️项目关注
 
 * **码云：<https://gitee.com/yanyutao0402/chanyue-cms>**
-* **GitHub(备份)：<https://github.com/mingkong2023/ChanCMS>**
 
 ## 👴项目交流
 
  如果喜欢我们的项目，请点个 Star。
- 微信群交流请联系微信: `yanyutao2014` 🧒 👧 👱  🧔 👴
+ 微信群交流请联系微信: `yanyutao2014` 🧒 👧 👱 🧔 👴,纯技术交流，广告党勿扰，谢谢合作！！！
 
 ## 许可证
 
@@ -151,8 +148,7 @@ server 部署代码
 
 ## 管理后台部分截图
 
-![后台展示](https://gitee.com/yanyutao0402/chanyue-cms/raw/master/server/app/public/template/default/img/info.png)
-
-![后台展示](https://gitee.com/yanyutao0402/chanyue-cms/raw/master/server/app/public/template/default/img/category.png)
-
-![后台展示](https://gitee.com/yanyutao0402/chanyue-cms/raw/master/server/app/public/template/default/img/article.png)
+![登录](https://pic.imgdb.cn/item/6749e83fd0e0a243d4db4f12.jpg)
+![board](https://pic.imgdb.cn/item/6749e83fd0e0a243d4db4f11.jpg)
+![category](https://pic.imgdb.cn/item/6749e83fd0e0a243d4db4f10.jpg)
+![article](https://pic.imgdb.cn/item/6749e83fd0e0a243d4db4f13.jpg)

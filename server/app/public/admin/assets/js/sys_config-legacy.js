@@ -1,1 +1,0 @@
-System.register(["./index-legacy.js"],(function(e,t){"use strict";var s,p;return{setters:[e=>{s=e.e,p=e.A}],execute:function(){e("f",(()=>s({url:`${p.BASE_API}/api/sysApp/find`,method:"get"}))),e("v",(()=>s({url:`${p.BASE_API}/api/sysApp/views`,method:"get"}))),e("u",(e=>s({url:`${p.BASE_API}/api/sysApp/update`,method:"post",data:e})))}}}));

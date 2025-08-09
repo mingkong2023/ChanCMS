@@ -1,1 +1,0 @@
-import{e as a,A as s}from"./index.js";let t=()=>a({url:"".concat(s.BASE_API,"/api/sysApp/find"),method:"get"}),p=()=>a({url:"".concat(s.BASE_API,"/api/sysApp/views"),method:"get"}),e=t=>a({url:"".concat(s.BASE_API,"/api/sysApp/update"),method:"post",data:t});export{t as f,e as u,p as v};
