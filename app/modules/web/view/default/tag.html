@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"content="{{site.description}}">
+    <meta name="keywords" content="{{site.keywords}}"/>
+    <meta property="og:title" content="{{site.title}}" />
+    <meta property="og:description" content="{{site.description}}" />
+    <title>{{path}}-{{site.name}}</title>
+    {{include './common/meta.html'}}
+
+<body class="bg-f8f8f8">
+    <!-- 头部 -->
+    {{include './common/header.html'}}
+
+    <!-- 头条文章 -->
+    <main class="bg-f2f2f2 pt-10 pb-20 flex">
+        <div class="main center mt-10 flex gap-20">
+            <!-- 最新文章 -->
+            <article class="article-index">
+                <div class="bg-fff pd-15 mb-1 f-14 c-999 radius-6">
+                    <i class="ico-20 ico-home pos-r t-3"></i>
+                    <a class="" href="/">首页</a> /
+                    <a class="c-666" href="/tags/{{path}}.html">tag标签：<span class="red">{{tag || path}}</span></a>
+                </div>
+
+                <div class="bg-fff pl-25 pr-25 pb-25 radius-6 list">
+                    {{if tags.list.length>0}}
+                    <ul>
+                        {{each tags.list}}
+                        <li class="flex border-dashed pt-20 pb-20">
+                            <figure class="flex justify-between mt-10 ">
+                                {{if $value.img}}
+                                <div class="thumb-120 mb-10">
+                                    <img class="w-p100" src="{{$value.img}}" alt="{{$value.title}}"
+                                        title="{{$value.title}}">
+                                </div>
+                                {{/if}}
+                                <div class="flex-1">
+                                    <h3 class="f-18 ellips-2 bold mt-4 c-141414">
+                                        <a href="{{$value.path}}/article-{{$value.id}}.html"
+                                            title="{{$value.title}}">{{$value.title}}</a>
+                                            
+                                    </h3>
+                                    <p class="f-12 mb-8 flex">
+                                        <a class="el-tag mr-5 mb-5">{{$value.name}}</a>
+
+                                        <span class="c-bfbfbf">
+                                        <i class="ico-20 ico-time pos-r t-4"></i> {{ dateFormat($value.createdAt, 'YYYY-MM-DD HH:mm:ss') }}
+                                        <i class="ico-20 ico-admin pos-r t-4 ml-4"></i> {{$value.author ||'admin'}}
+                                        <i class="ico-20 ico-view pos-r t-5 ml-4"></i> 阅读（{{$value.pv}}）
+                                        <!-- <i class="ico-20 ico-zan pos-r t-4 ml-4"></i>点赞（95） -->
+                                    </span>
+
+                                    </p>
+                                    <p class="f-14 ellips-3 c-595959">
+                                        <a href="{{$value.path}}/article-{{$value.id}}.html" title="{{$value.title}}">
+                                            {{@ $value.description}}[详情]</a>
+                                    </p>
+                                </div>
+                            </figure>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{else}}
+                    <div class="el-empty">
+                        <div class="mt-35 mb-35 f-30">
+                            <p>灯火阑珊处，</p>
+                            <p>文章一点无！</p>
+                        </div>
+                        <div class="el-empty_Description">
+                            <p><a href="https://www.chancms.top" target="_blank">ChanCMS</p>
+                        </div>
+                    </div>
+                    {{/if}}
+                </div>
+
+                {{if pageHtml}}
+                <div class="page mt-1 bg-fff pd-25 flex justify-center  radius-6" id="app">
+                    <ul class="overflow-h center" id="page">
+                      {{@ pageHtml}}
+                    </ul> 
+               </div>
+               {{/if}}
+
+            </article>
+
+            <aside class="flex-1">
+                <!-- tag标签 -->
+                <section class="notices pd-20 mb-20 bg-fff">
+                    <h3 class="m-title border-dashed f-16 flex justify-between">tag标签</h3>
+                    <p class="mt-10">
+                        {{each tag}}
+                        <a class="el-tag mr-5 mb-5" href="/tags/{{$value.path}}/tag.html?tag={{$value.name}}">{{$value.name}}</a>
+                        {{/each}}
+                    </p>
+                </section>
+
+                <!-- 广告 -->
+                {{if frag.ad}}
+                <section class="ad mb-20 bg-fff">
+                    {{@ frag.ad.content || ''}}
+                </section>
+                {{/if}}
+
+            </aside>
+        </div>
+    </main>
+
+
+
+    <!-- footer -->
+    {{include './common/footer.html'}}
+    <!-- 移动端导航 -->
+    {{include './common/wap-nav.html'}}
+    <div class="api ignore mb-20 mt-20 pd-20 bg-f2f2f2">
+        <h1>ChanCMS 当前页面数据：</h1>
+        <p class="mb-20">site-> {{site}} </p>
+        <p class="mb-20">nav-> {{nav}} </p>
+        <p class="mb-20">category-> {{category}}</p>
+        <p class="mb-20">friendlink-> {{friendlink}}</p>
+        <p class="mb-20">static_url-> {{static_url}}</p>
+        <p class="mb-20">frag--->{{frag}}</p>
+        <p class="mb-20">ad--->{{frag.ad}}</p>
+        <p class="mb-20">tag--->{{tag}}</p>
+        <p class="mb-20">position------>{{position}}</p>
+        <p class="mb-20">navSub------>{{navSub}}</p>
+        <p class="mb-20">list------>{{data}}</p>
+    </div>
+    {{include './common/js.html'}}
+    <!-- <script>
+      function toTag(){
+        let mumber = decodeURIComponent( location.pathname).match(/\d+/);
+        this.current = Array.isArray(mumber)?+mumber[0]:1;
+        var searchTerm = "";
+        var url = decodeURIComponent(location.pathname);
+        // 匹配提取搜索词
+        var termMatch = url.match(/\/([^/]+)(\/\d+)?\.html?$/);
+        if (termMatch) {
+            searchTerm = termMatch[1];
+        }
+        location.href = '/search/'+searchTerm+'/' + v + '.html'
+      }
+    </script> -->
+</body>
+
+</html>

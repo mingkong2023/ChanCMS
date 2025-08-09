@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{cate.seoDescription || site.description}}">
+    <meta name="keywords" content="{{cate.seoKeywords || site.keywords}}" />
+    <meta property="og:title" content="{{cate.seoTitle || cate.name}}-{{site.name}}" />
+    <meta property="og:description" content="{{site.description}}" />
+    <title>{{article.title || cate.name}}-{{site.name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{static_url}}/img/logo.png" />
+    <meta property="og:url" content="http://{{site.domain}}" />
+    <meta name="author" content="ChanCMS" />
+    <link rel="shortcut icon" href="{{static_url}}/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="{{static_url}}/css/saduo@0.0.2.css" />
+    <link rel="stylesheet" href="{{static_url}}/css/saduo-wap@0.0.1.css" />
+    <link rel="stylesheet" href="{{static_url}}/css/main.css" />
+</head>
+
+<body class="bg-f8f8f8 pos-r">
+    {{include './common/header.html'}}
+    {{@ article.content}}
+</body>
+
+</html>
