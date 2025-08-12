@@ -5,7 +5,6 @@ const {
 
 import home from "../service/home.js";
 
-
 export default () => {
   return async (req, res, next) => {
     try {

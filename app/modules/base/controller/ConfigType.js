@@ -1,3 +1,12 @@
+import dayjs from "dayjs";
+const {
+  config,
+  helper: {
+    utils: { setToken, getToken, bcrypt },
+    api: { success, fail },
+  },
+} = Chan;
+
 import ConfigType from "../service/ConfigType.js";
 
 let ConfigTypeController  = {

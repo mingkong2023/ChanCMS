@@ -11,9 +11,9 @@ function createStorage(dir = "uploads", changeDir = true) {
       let destinationDir = "";
       if (changeDir) {
         const date = dayjs(Date.now()).format("YYYY/MM/DD");
-        destinationDir = path.join(`app/public/`, dir, template, date);
+        destinationDir = path.join(`public/`, dir, template, date);
       } else {
-        destinationDir = path.join(`app/public/`, dir, template);
+        destinationDir = path.join(`public/`, dir, template);
       }
       // 确保目录存在
       fs.mkdirSync(destinationDir, { recursive: true });

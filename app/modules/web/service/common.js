@@ -95,7 +95,7 @@ const common = {
         .where("a.status", 0)
         .orderBy("a.createdAt", "DESC")
         .limit(len)
-        .offset(start);
+        .offset(parseInt(start));
 
       if (attr) {
         query.whereIn("a.attr", attr);

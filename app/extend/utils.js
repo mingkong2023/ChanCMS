@@ -12,8 +12,11 @@ dayjs.locale('zh-cn');
 
 // 无限极分类tree
 export function tree(arr, pid = 0) {
+  if(arr.length === 0){
+    return []
+  }
   let result = [];
-  arr.forEach((item, index) => {
+  arr.forEach((item) => {
     if (item.pid === pid) {
       let children = tree(arr, item.id);
       if (children.length) {

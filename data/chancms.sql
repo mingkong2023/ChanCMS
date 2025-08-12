@@ -1,7 +1,7 @@
 /*
- Navicat Premium Data Transfer
+ Navicat Premium Dump SQL
 
- Source Server         : localhost_3306
+ Source Server         : 本地
  Source Server Type    : MySQL
  Source Server Version : 50726 (5.7.26)
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50726 (5.7.26)
  File Encoding         : 65001
 
- Date: 01/08/2025 22:28:19
+ Date: 12/08/2025 19:13:34
 */
 
 SET NAMES utf8mb4;
@@ -43,26 +43,27 @@ CREATE TABLE `cms_article`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `cid`(`cid`) USING BTREE,
   CONSTRAINT `cms_article_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `cms_category` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '文章表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '文章表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cms_article
 -- ----------------------------
 INSERT INTO `cms_article` VALUES (1, 2, '', 'ChanCMS内容管理系统', '', '2', '', '', '', '', 'ChanCMS是一款基于Node、Express、MySQL、Vue3研发的高质量实用型CMS系统。轻量、灵活、稳定、高性能、易扩展，让开发更简单。', '', '<p>ChanCMS是一款基于Node、Express、MySQL、Vue3研发的高质量实用型CMS系统。轻量、灵活、稳定、高性能、易扩展，让开发更简单。</p>\n<ul>\n<li>自研。基于自研chanjs轻量级mvc框架实现，轻量、灵活、稳定、高性能、可持续。</li>\n<li>SEO。专注于<code>seo</code>,伪静态<code>html</code>和拼音导航，灵活设置关键词和描述。</li>\n<li>安全。基于<code>knex</code>,高防<code>sql</code>注入，接口权限校验，为安全提供保障。</li>\n<li>灵活。碎片功能，支持零碎文案配置，方便各类灵活文案配置。</li>\n<li>高扩展。支持扩展模型，字段配置，可动态生成表，超强扩展。</li>\n<li>模块化。一切模块相互独立，互不干扰。</li>\n<li>插件化。灵活开发，支持完整功能模块。</li>\n<li>无头cms，为多端提供接口支持。</li>\n</ul>', 0, 14, '', '2024-09-13 22:49:28', '2024-11-24 02:43:13');
 INSERT INTO `cms_article` VALUES (2, 3, '', 'ChanCMS山水图：风景图', '', '2', '', '', '', '', '山峰树林湖泊', '/public/cover/04.jpg', '<p><img src=\"https://q5.itc.cn/q_70/images03/20240706/62869b54ec3c4ea5a842b97ac9722630.jpeg\" alt=\"\" width=\"2062\" height=\"1200\"></p>', 0, 32, '', '2024-09-13 22:55:57', '2024-12-13 23:36:50');
-INSERT INTO `cms_article` VALUES (3, 4, '', 'ChanCMS后台基本操作', '', '2', '', '', '', '', 'ChanCMS后台基本操作', '', '<p><iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=877077167&bvid=BV17N4y1Y7WC&cid=1362009352&p=1\" height=\"520\" frameborder=\"no\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe></p>', 0, 9, '', '2024-09-13 22:59:58', '2025-08-01 22:09:53');
+INSERT INTO `cms_article` VALUES (3, 4, '', 'ChanCMS后台基本操作', '', '2', '', '', '', '', 'ChanCMS后台基本操作', '', '<p><iframe src=\"//player.bilibili.com/player.html?isOutside=true&aid=877077167&bvid=BV17N4y1Y7WC&cid=1362009352&p=1\" height=\"520\" frameborder=\"no\" scrolling=\"no\" allowfullscreen=\"allowfullscreen\"></iframe></p>', 0, 8, '', '2024-09-13 22:59:58', '2025-02-13 22:38:52');
 INSERT INTO `cms_article` VALUES (5, 7, '', 'ChanCMS简介', '', '2', '', '', '', '', 'ChanCMS简介', '', '<p><strong>ChanCMS内容管理系统</strong></p>\n<p>ChanCMS是一款基于Node、Express、MySQL、Vue3研发的高质量实用型CMS系统。轻量、灵活、稳定、高性能、易扩展，让开发更简单。</p>\n<p><strong>系统特色</strong></p>\n<p>自研。基于自研chanjs轻量级mvc框架实现，轻量、灵活、稳定、高性能、可持续。</p>\n<p>SEO。专注于seo,伪静态html和拼音导航，灵活设置关键词和描述。</p>\n<p>安全。基于knex,高防sql注入，接口权限校验，为安全提供保障。</p>\n<p>灵活。碎片功能，支持零碎文案配置，方便各类灵活文案配置。</p>\n<p>高扩展。支持扩展模型，字段配置，可动态生成表，超强扩展。</p>\n<p>模块化。一切模块相互独立，互不干扰。</p>\n<p>插件化。灵活开发，支持完整功能模块。</p>\n<p>无头cms，为多端提供接口支持。</p>\n<p><strong>软件架构</strong></p>\n<p>后台管理FE</p>\n<pre class=\"language-markup\"><code>vue3\nvue-router\npina\nelement-plus\nvite4\ntinymce</code></pre>\n<p>服务端技术栈</p>\n<pre class=\"language-markup\"><code>nodejs v20.16.0+\nexpress 4.18+\nmysql v5.7.26\nknex (sql操作)\nart-tempate v4.13.2+\npm2 v5.2.2\njwt\npm2 (prd)\nnodemon (dev)</code></pre>', 0, 67, '', '2024-09-13 23:06:30', '2025-02-08 21:57:32');
 INSERT INTO `cms_article` VALUES (6, 3, '', 'ChanCMS山水图：桂林山水', '', '2', '', '', '', '', '', '/public/cover/06.jpg', '<p><img src=\"https://img-qn.51miz.com/preview/element/00/01/30/75/E-1307587-924E2CBE.png!/quality/90/unsharp/true/compress/true/format/png/fwfh/900x640\" alt=\"\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://p3-pc-sign.douyinpic.com/tos-cn-i-0813c001/ogKHZvfQQ30BGWXEzfeP2BQ70OA5AA7AAdyJgF~tplv-dy-aweme-images-v2:3000:3000:q75.webp?biz_tag=aweme_images&from=327834062&s=PackSourceEnum_AWEME_DETAIL&sc=image&se=false&x-expires=1729130400&x-signature=vl4RUOePzX7s4npn4oARkHH6EAc%3D\" alt=\"\" width=\"896\" height=\"1536\"></p>', 0, 5, '', '2024-09-17 10:53:54', '2024-12-13 23:36:52');
 INSERT INTO `cms_article` VALUES (7, 3, '', 'ChanCMSAIGC图片美女', '', '2', '', '', '', '', '', '/public/cover/10.jpg', '<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://p9-heycan-hgt-sign.byteimg.com/tos-cn-i-3jr8j4ixpe/31f5581b6dee463bb23c6f4a31d1b204~tplv-3jr8j4ixpe-aigc_resize:0:0.png?lk3s=43402efa&x-expires=1728864000&x-signature=AP23D4sBKcal3LurrbHp9WWra8M%3D&format=.png\" alt=\"\"></p>', 0, 4, '', '2024-09-27 10:06:09', '2024-12-13 23:36:54');
-INSERT INTO `cms_article` VALUES (8, 3, '', 'ChanCMS图片美女', '', '2', '', '', '', '', '', '/public/cover/06.jpg', '<p style=\"text-align: center;\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://p3-heycan-hgt-sign.byteimg.com/tos-cn-i-3jr8j4ixpe/b9255497ccf94fcf9a1c873eda23b78f~tplv-3jr8j4ixpe-aigc_resize:0:0.png?lk3s=43402efa&x-expires=1728864000&x-signature=xU2jY9QGyZY5ZeG56f%2BZgRyJ4Yk%3D&format=.png\" alt=\"\"></p>', 0, 3, '', '2024-09-27 10:07:52', '2025-05-28 21:47:28');
+INSERT INTO `cms_article` VALUES (8, 3, '', 'ChanCMS图片美女', '', '2', '', '', '', '', '', '/public/cover/06.jpg', '<p style=\"text-align: center;\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://p3-heycan-hgt-sign.byteimg.com/tos-cn-i-3jr8j4ixpe/b9255497ccf94fcf9a1c873eda23b78f~tplv-3jr8j4ixpe-aigc_resize:0:0.png?lk3s=43402efa&x-expires=1728864000&x-signature=xU2jY9QGyZY5ZeG56f%2BZgRyJ4Yk%3D&format=.png\" alt=\"\"></p>', 0, 2, '', '2024-09-27 10:07:52', '2024-12-13 23:36:55');
 INSERT INTO `cms_article` VALUES (9, 3, '', 'ChanCMS图片美女', '', '2', '', '', '', '', '', '/public/cover/07.jpg', '<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://p3-heycan-hgt-sign.byteimg.com/tos-cn-i-3jr8j4ixpe/9266d858c987459a96ff3a1847d8c9fb~tplv-3jr8j4ixpe-aigc_resize:0:0.png?lk3s=43402efa&x-expires=1728864000&x-signature=%2F%2BWXysOaMFc6Gm%2Fkiv%2FyT2d%2FoAQ%3D&format=.png\" alt=\"\"></p>', 0, 7, '', '2024-09-27 10:37:12', '2025-02-13 22:38:49');
-INSERT INTO `cms_article` VALUES (10, 3, '', 'ChanCMS图片美女', '', '2', '', '', '', '', '', '/public/cover/04.jpg', '<p style=\"text-align: center;\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://p9-heycan-hgt-sign.byteimg.com/tos-cn-i-3jr8j4ixpe/178004138fad44e3ac7bfd0e6f415e38~tplv-3jr8j4ixpe-aigc_resize:2000:2000.png?lk3s=43402efa&x-expires=1747308745&x-signature=zEPP6LTkWbEnU%2B9af0J1pBPfrqI%3D&format=.png\" alt=\"\" width=\"288\" height=\"512\"></p>', 0, 10, '', '2024-09-27 10:46:27', '2025-08-01 22:13:59');
-INSERT INTO `cms_article` VALUES (11, 6, '', 'ChanCMS欢迎使用ChanCMS系统', '', '2', '', 'special.html', '', '', '', '', '<section class=\"banner row justify-center\">\n<h1 class=\"chanyue text-c\">ChanCMS</h1>\n<p class=\"f-23 text-c mt-20\">基于express+mysql的一款轻量级高质量cms管理系统</p>\n<p class=\"text-c mt-20\"><span class=\"el-button el-button--primary is-round mr-10 c-fff\"><a href=\"https://www.chancms.top/docs/index.html\" target=\"_blank\" rel=\"noopener\">开始使用</a> </span><span class=\"el-button el-button--primary is-round c-fff\"><a href=\"https://gitee.com/yanyutao0402/chanyue-cms\" target=\"_blank\" rel=\"noopener\">码云</a></span></p>\n</section>\n<section class=\"main center flex justify-between flex-wrap pd-30\">\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">大道至简</h3>\n<p class=\"f-16 mb-20\">基于express自研mvc框架， 优秀的稳定性，可持续迭代，拒绝复杂设计模式。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">独有特色</h3>\n<p class=\"f-16 mb-20\">轻量、灵活、自研、稳定、高性能。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">SEO标准</h3>\n<p class=\"f-16 mb-20\">专注于seo功能，伪静态、自定义导航、灵活设置关键词和描述。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">灵活</h3>\n<p class=\"f-16 mb-20\">万能碎片功能，支持零碎文案配置，把灵活发挥到极致。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">高扩展</h3>\n<p class=\"f-16 mb-20\">无头cms和传统模板共存，多端渲染。灵活模块开发，开发多领域网站。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">高持续性</h3>\n<p class=\"f-16 mb-20\">多年深入nodejs技术栈，一心致力于自研开发，前后端代码逐行开发，可持续性强。</p>\n</div>\n</section>\n<footer class=\"pd-20\">\n<p class=\"mt-30 text-c f-14\">&copy;CopyRight ChanCMS</p>\n<p class=\"mt-5 text-c f-12\"><a href=\"https://beian.miit.gov.cn/\" target=\"_blank\" rel=\"external nofollow noopener\">皖ICP备2024033678号-1</a></p>\n</footer>', 0, 78, '', '2024-10-02 13:58:53', '2025-08-01 22:14:01');
+INSERT INTO `cms_article` VALUES (10, 3, '', 'ChanCMS图片美女', '', '2', '', '', '', '', '', '/public/cover/04.jpg', '<p style=\"text-align: center;\"><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"https://p9-heycan-hgt-sign.byteimg.com/tos-cn-i-3jr8j4ixpe/178004138fad44e3ac7bfd0e6f415e38~tplv-3jr8j4ixpe-aigc_resize:2000:2000.png?lk3s=43402efa&x-expires=1747308745&x-signature=zEPP6LTkWbEnU%2B9af0J1pBPfrqI%3D&format=.png\" alt=\"\" width=\"288\" height=\"512\"></p>', 0, 8, '', '2024-09-27 10:46:27', '2025-02-14 23:03:47');
+INSERT INTO `cms_article` VALUES (11, 6, '', 'ChanCMS欢迎使用ChanCMS系统', '', '2', '', 'special.html', '', '', '', '', '<section class=\"banner row justify-center\">\n<h1 class=\"chanyue text-c\">ChanCMS</h1>\n<p class=\"f-23 text-c mt-20\">基于express+mysql的一款轻量级高质量cms管理系统</p>\n<p class=\"text-c mt-20\"><span class=\"el-button el-button--primary is-round mr-10 c-fff\"><a href=\"https://www.chancms.top/docs/index.html\" target=\"_blank\" rel=\"noopener\">开始使用</a> </span><span class=\"el-button el-button--primary is-round c-fff\"><a href=\"https://gitee.com/yanyutao0402/chanyue-cms\" target=\"_blank\" rel=\"noopener\">码云</a></span></p>\n</section>\n<section class=\"main center flex justify-between flex-wrap pd-30\">\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">大道至简</h3>\n<p class=\"f-16 mb-20\">基于express自研mvc框架， 优秀的稳定性，可持续迭代，拒绝复杂设计模式。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">独有特色</h3>\n<p class=\"f-16 mb-20\">轻量、灵活、自研、稳定、高性能。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">SEO标准</h3>\n<p class=\"f-16 mb-20\">专注于seo功能，伪静态、自定义导航、灵活设置关键词和描述。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">灵活</h3>\n<p class=\"f-16 mb-20\">万能碎片功能，支持零碎文案配置，把灵活发挥到极致。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">高扩展</h3>\n<p class=\"f-16 mb-20\">无头cms和传统模板共存，多端渲染。灵活模块开发，开发多领域网站。</p>\n</div>\n<div class=\"m-card\">\n<h3 class=\"f-20 mb-20\">高持续性</h3>\n<p class=\"f-16 mb-20\">多年深入nodejs技术栈，一心致力于自研开发，前后端代码逐行开发，可持续性强。</p>\n</div>\n</section>\n<footer class=\"pd-20\">\n<p class=\"mt-30 text-c f-14\">&copy;CopyRight ChanCMS</p>\n<p class=\"mt-5 text-c f-12\"><a href=\"https://beian.miit.gov.cn/\" target=\"_blank\" rel=\"external nofollow noopener\">皖ICP备2024033678号-1</a></p>\n</footer>', 0, 66, '', '2024-10-02 13:58:53', '2025-02-28 22:53:17');
 INSERT INTO `cms_article` VALUES (13, 5, '', 'ChanCMS v3.0.6下载', '', '2', '', '', '', '', '', '', '<p>ChanCMS是一款基于Node、Express、MySQL、Vue3研发的高质量实用型CMS系统。</p>', 0, 16, '', '2024-10-02 15:40:46', '2024-10-02 15:40:46');
 INSERT INTO `cms_article` VALUES (14, 2, '', 'ChanCMS', '', '2', '', 'article-pdf.html', '', '', '', '', '<p>/public/doc/1.pdf</p>', 0, 36, '', '2024-11-09 18:40:34', '2024-12-13 23:37:02');
-INSERT INTO `cms_article` VALUES (15, 9, '', 'ChanCMS于作者', '', '2', '', '', '', '', '关于作者测试单页', '', '<p>关于作者测试单页</p>', 0, 82, '', '2024-12-05 23:26:59', '2025-08-01 22:14:07');
+INSERT INTO `cms_article` VALUES (15, 9, '', 'ChanCMS于作者', '', '2', '', '', '', '', '关于作者测试单页', '', '<p>关于作者测试单页</p>', 0, 62, '', '2024-12-05 23:26:59', '2025-02-28 22:53:19');
 INSERT INTO `cms_article` VALUES (18, 8, '', 'ChanCMS早间新闻—2024-12-08', '', '2', '', '', '', '', '123', '', '<p>123</p>', 0, 2, '', '2024-12-09 23:16:07', '2025-02-14 22:59:47');
-INSERT INTO `cms_article` VALUES (21, 8, '', 'ChanCMS一条鱼如何“接二连三”', '', '2', '', NULL, '', '', '  凌晨2点刚过，王金友就赶到自家鱼塘忙着捕鱼出货了。', '', '  <p>凌晨2点刚过，王金友就赶到自家鱼塘忙着捕鱼出货了。</p> <p>两个小时左右，3万来斤黄金鲫就经由水路运抵兴化市沙沟镇上的鱼行，近18万元卖鱼款很快到账。随着早市开场，从各个塘口汇聚而来的鲜鱼将发往农副市场、食品企业、景区饭店等处。</p> <p>兴化水网纵横，渔业发达，是江苏著名的“鱼米之乡”。当地的“一条鱼”，不仅富了养殖业，兴了加工业，也带动了旅游业发展，成了江苏农特产“接二连三”融合发展的缩影。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL1724282105015SPVOL0QXRZ.jpg\" width=\"600\" height=\"338\" alt=\"王金友家的鱼塘配备了自动投饵机。人民网 范尧摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">王金友家的鱼塘配备了自动投饵机。人民网 范尧摄</span></p> <p><strong>一条鱼，养在水中富民增收</strong></p> <p>“如果不是今天捕鱼，现在投饵根本不出家门，直接手机操作，还可以看到鱼塘的实时画面。”王金友说。</p> <p>作为有着30多年经验的养鱼户，以前最让王金友头疼的就是喂鱼。一袋袋菜籽饼搬到船上，用铁锹拌匀，一锹锹撒到水塘，每天成百上千斤的鱼食，“哪怕是冬季，一到喂鱼时那汗出的，衣服就没有干过。”</p> <p>如今，鱼塘全部装上了自动投饵机，定时定量投喂，王金友感慨：“现在承包400亩鱼塘，一年能卖600多万元，从来没觉得养鱼像这样轻松。”</p> <p>作为主打农产品，兴化市淡水鱼养殖规模常年维持在16万亩。当地以淡水鱼、大闸蟹为主的水产品年产量超30万吨，连续34年位居江苏省内陆渔业县级之首，渔业经济年产值达260多亿元。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL1724282118793UALTZ2ZRGW.jpg\" width=\"600\" height=\"450\" alt=\"当地企业展柜里摆放着部分以鱼为原料开发的食品。人民网 王丹丹摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">当地企业展柜里摆放着部分以鱼为原料开发的食品。人民网 王丹丹摄</span></p> <p><strong>一条鱼，生产线上吃干榨净</strong></p> <p>早上7点，5辆厢式货车陆续驶入兴化经济开发区的大泽水产制品有限公司。这趟运来的5万多斤鲢鱼，是渔业经纪人姜绍喜一早从兴化各塘口收来的。</p> <p>活鱼经传送带进入车间，生产线启动作业，80多位工人依次进行分级、打鳞、切断等初处理。</p> <p>一条鲢鱼切为鱼头和鱼身，分别在剁椒鱼头和鱼块生产线上速冻锁鲜，抽真空后再组合料包，做成不同种类的包装食品。此外，鱼骨等经过熟化、粉碎、烘干被加工成宠物饲料。</p> <p>“仅‘边角料’利用，每年就为企业增收近百万元。”该公司总经理张永山介绍，这种对一条鱼“吃干榨净”式的综合利用，既提高了经济效益，也实现了对生鱼废料的清洁化处理。“我们每天要用掉10万斤左右鲢鱼，把兴化本地的鲢鱼都买完，也只能满足需求量的1/3。”他说。</p> <p>在兴化，以鱼为原料的包装食品，除了剁椒鱼头，还有烤鱼、酸菜鱼等。与此同时，健康食品产业也已成为当地三大主导产业之一，规上企业年度开票收入突破110亿元。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL1724282131269FYZXGVZQYM.jpg\" width=\"600\" height=\"337\" alt=\"沙沟镇河网纵横，尽显水乡风貌。人民网 范尧摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">沙沟镇河网纵横，尽显水乡风貌。人民网 范尧摄</span></p> <p><strong>一条鱼，以农兴旅的美食担当</strong></p> <p>72岁的江荣根在外工作了大半辈子，退休后以“游客”身份回到家乡兴化。促使他回乡“旅居”的，是一碗念念不忘的鱼汤面。</p> <p>“原本只想在亲戚家住两天就回上海，结果却在老家住了下来。”江荣根入住的民宿“枇杷苑”，老板王秀荣做得一手家乡菜，而最能打动江荣根的，还是那碗鱼汤面。</p> <p>鱼汤是将鳝鱼剔肉留骨，加入小鲫鱼、大猪骨煸炒，用文火慢炖到浓白，最后再把下好的面条放到汤头里。这一碗汤鲜味美的鱼汤面让江荣根穿过数十年岁月，吃到了“小时候的味道”。</p> <p>每年住在兴化的时间里，江荣根都会邀请他在上海的“退休团”朋友同来，春看垛田油菜，夏赏万亩荷塘，秋游水上森林，冬观候鸟翔集。沙沟古镇景区内的金沙沟水席馆，一道兴化鱼圆颇受大家的好评。“不少客人都说，就为这口鱼圆来的兴化，吃完还要打包几份带走。高峰期我们一天能卖掉大几百斤。”在金沙沟水席馆总经理张庄巧眼里，鱼汤面也好，鱼圆也罢，都是本乡人的家常饭菜，也是城里人舌尖上的乡愁记忆。</p> <p>以农兴旅，以旅促农，美食总是屡试不爽的关键。仅金沙沟水席馆这一家，一年上百万元的营业额中，淡水鱼有关的菜品销售占近七成。而像这样的餐馆，兴化境内的景区里比比皆是。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL17242819971464D92R8R6C7.jpg\" width=\"600\" height=\"567\" alt=\"每年6月的万人龙虾宴，是盱眙龙虾爆火的标志。许昌银摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">每年6月的万人龙虾宴，是盱眙龙虾爆火的标志。许昌银摄</span></p> <p><strong>“接二连三”的，不止一条鱼</strong></p> <p>产业振兴是乡村振兴的重中之重。事实上，像“兴化的一条鱼”这样“接二连三”的故事，江苏还有很多。</p> <p>淮安市盱眙县有“中国龙虾之都”的美称，该县小龙虾养殖面积97万亩，从养殖、加工到餐饮，从事龙虾相关产业的人口超过20万，形成了一个年产值超300亿元的富民产业。去年投产的龙虾超级工厂，更让盱眙龙虾成为只需24小时就能从当地虾田送到全国消费者手中的即食美味。</p> <p>在无锡市惠山区阳山镇，3.5万亩桃林，5000多户桃农，成就了当地人的一项甜蜜产业。当地不光卖桃，还卖起了风景，全年200多万的游客带来农旅两旺，阳山农民人均可支配收入高达6.6万元。</p> <p>近些年，江苏持续倡导推动农村一二三产业融合发展。人民网从江苏省农业农村厅了解到，截至目前，江苏以“一村一品、一镇一特、一县一业”为抓手，已打造10亿元以上县域优势特色产业近200个，培育国家农业产业强镇60多个、全国“一村一品”示范村镇200多个。</p> <p>“一二三产业融合发展可以将资源优势转变为产品优势，产品优势转化为产业优势，产业优势转化为市场优势，是乡村产业振兴的进阶方向。其关键在于找准特色资源和优势产业，注重发挥龙头企业的带动作用，并持续优化产业链合作机制，切实带动农民增收。”江苏省农科院农产品加工研究所首席研究员李春阳说。</p><center></center> ', 0, 7, '', '2024-12-09 23:17:35', '2025-08-01 22:13:56');
+INSERT INTO `cms_article` VALUES (21, 8, '', 'ChanCMS一条鱼如何“接二连三”', '', '2', '', NULL, '', '', '  凌晨2点刚过，王金友就赶到自家鱼塘忙着捕鱼出货了。', '', '  <p>凌晨2点刚过，王金友就赶到自家鱼塘忙着捕鱼出货了。</p> <p>两个小时左右，3万来斤黄金鲫就经由水路运抵兴化市沙沟镇上的鱼行，近18万元卖鱼款很快到账。随着早市开场，从各个塘口汇聚而来的鲜鱼将发往农副市场、食品企业、景区饭店等处。</p> <p>兴化水网纵横，渔业发达，是江苏著名的“鱼米之乡”。当地的“一条鱼”，不仅富了养殖业，兴了加工业，也带动了旅游业发展，成了江苏农特产“接二连三”融合发展的缩影。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL1724282105015SPVOL0QXRZ.jpg\" width=\"600\" height=\"338\" alt=\"王金友家的鱼塘配备了自动投饵机。人民网 范尧摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">王金友家的鱼塘配备了自动投饵机。人民网 范尧摄</span></p> <p><strong>一条鱼，养在水中富民增收</strong></p> <p>“如果不是今天捕鱼，现在投饵根本不出家门，直接手机操作，还可以看到鱼塘的实时画面。”王金友说。</p> <p>作为有着30多年经验的养鱼户，以前最让王金友头疼的就是喂鱼。一袋袋菜籽饼搬到船上，用铁锹拌匀，一锹锹撒到水塘，每天成百上千斤的鱼食，“哪怕是冬季，一到喂鱼时那汗出的，衣服就没有干过。”</p> <p>如今，鱼塘全部装上了自动投饵机，定时定量投喂，王金友感慨：“现在承包400亩鱼塘，一年能卖600多万元，从来没觉得养鱼像这样轻松。”</p> <p>作为主打农产品，兴化市淡水鱼养殖规模常年维持在16万亩。当地以淡水鱼、大闸蟹为主的水产品年产量超30万吨，连续34年位居江苏省内陆渔业县级之首，渔业经济年产值达260多亿元。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL1724282118793UALTZ2ZRGW.jpg\" width=\"600\" height=\"450\" alt=\"当地企业展柜里摆放着部分以鱼为原料开发的食品。人民网 王丹丹摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">当地企业展柜里摆放着部分以鱼为原料开发的食品。人民网 王丹丹摄</span></p> <p><strong>一条鱼，生产线上吃干榨净</strong></p> <p>早上7点，5辆厢式货车陆续驶入兴化经济开发区的大泽水产制品有限公司。这趟运来的5万多斤鲢鱼，是渔业经纪人姜绍喜一早从兴化各塘口收来的。</p> <p>活鱼经传送带进入车间，生产线启动作业，80多位工人依次进行分级、打鳞、切断等初处理。</p> <p>一条鲢鱼切为鱼头和鱼身，分别在剁椒鱼头和鱼块生产线上速冻锁鲜，抽真空后再组合料包，做成不同种类的包装食品。此外，鱼骨等经过熟化、粉碎、烘干被加工成宠物饲料。</p> <p>“仅‘边角料’利用，每年就为企业增收近百万元。”该公司总经理张永山介绍，这种对一条鱼“吃干榨净”式的综合利用，既提高了经济效益，也实现了对生鱼废料的清洁化处理。“我们每天要用掉10万斤左右鲢鱼，把兴化本地的鲢鱼都买完，也只能满足需求量的1/3。”他说。</p> <p>在兴化，以鱼为原料的包装食品，除了剁椒鱼头，还有烤鱼、酸菜鱼等。与此同时，健康食品产业也已成为当地三大主导产业之一，规上企业年度开票收入突破110亿元。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL1724282131269FYZXGVZQYM.jpg\" width=\"600\" height=\"337\" alt=\"沙沟镇河网纵横，尽显水乡风貌。人民网 范尧摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">沙沟镇河网纵横，尽显水乡风貌。人民网 范尧摄</span></p> <p><strong>一条鱼，以农兴旅的美食担当</strong></p> <p>72岁的江荣根在外工作了大半辈子，退休后以“游客”身份回到家乡兴化。促使他回乡“旅居”的，是一碗念念不忘的鱼汤面。</p> <p>“原本只想在亲戚家住两天就回上海，结果却在老家住了下来。”江荣根入住的民宿“枇杷苑”，老板王秀荣做得一手家乡菜，而最能打动江荣根的，还是那碗鱼汤面。</p> <p>鱼汤是将鳝鱼剔肉留骨，加入小鲫鱼、大猪骨煸炒，用文火慢炖到浓白，最后再把下好的面条放到汤头里。这一碗汤鲜味美的鱼汤面让江荣根穿过数十年岁月，吃到了“小时候的味道”。</p> <p>每年住在兴化的时间里，江荣根都会邀请他在上海的“退休团”朋友同来，春看垛田油菜，夏赏万亩荷塘，秋游水上森林，冬观候鸟翔集。沙沟古镇景区内的金沙沟水席馆，一道兴化鱼圆颇受大家的好评。“不少客人都说，就为这口鱼圆来的兴化，吃完还要打包几份带走。高峰期我们一天能卖掉大几百斤。”在金沙沟水席馆总经理张庄巧眼里，鱼汤面也好，鱼圆也罢，都是本乡人的家常饭菜，也是城里人舌尖上的乡愁记忆。</p> <p>以农兴旅，以旅促农，美食总是屡试不爽的关键。仅金沙沟水席馆这一家，一年上百万元的营业额中，淡水鱼有关的菜品销售占近七成。而像这样的餐馆，兴化境内的景区里比比皆是。</p> <p style=\"text-align: center;\"><img src=\"http://www.people.com.cn//NMediaFile/2024/0822/LOCAL17242819971464D92R8R6C7.jpg\" width=\"600\" height=\"567\" alt=\"每年6月的万人龙虾宴，是盱眙龙虾爆火的标志。许昌银摄\"></p> <p style=\"text-align: center;\"><span desc=\"desc\">每年6月的万人龙虾宴，是盱眙龙虾爆火的标志。许昌银摄</span></p> <p><strong>“接二连三”的，不止一条鱼</strong></p> <p>产业振兴是乡村振兴的重中之重。事实上，像“兴化的一条鱼”这样“接二连三”的故事，江苏还有很多。</p> <p>淮安市盱眙县有“中国龙虾之都”的美称，该县小龙虾养殖面积97万亩，从养殖、加工到餐饮，从事龙虾相关产业的人口超过20万，形成了一个年产值超300亿元的富民产业。去年投产的龙虾超级工厂，更让盱眙龙虾成为只需24小时就能从当地虾田送到全国消费者手中的即食美味。</p> <p>在无锡市惠山区阳山镇，3.5万亩桃林，5000多户桃农，成就了当地人的一项甜蜜产业。当地不光卖桃，还卖起了风景，全年200多万的游客带来农旅两旺，阳山农民人均可支配收入高达6.6万元。</p> <p>近些年，江苏持续倡导推动农村一二三产业融合发展。人民网从江苏省农业农村厅了解到，截至目前，江苏以“一村一品、一镇一特、一县一业”为抓手，已打造10亿元以上县域优势特色产业近200个，培育国家农业产业强镇60多个、全国“一村一品”示范村镇200多个。</p> <p>“一二三产业融合发展可以将资源优势转变为产品优势，产品优势转化为产业优势，产业优势转化为市场优势，是乡村产业振兴的进阶方向。其关键在于找准特色资源和优势产业，注重发挥龙头企业的带动作用，并持续优化产业链合作机制，切实带动农民增收。”江苏省农科院农产品加工研究所首席研究员李春阳说。</p><center></center> ', 0, 3, '', '2024-12-09 23:17:35', '2025-02-08 23:48:29');
+INSERT INTO `cms_article` VALUES (22, 8, '', '欢迎使用ChanCMS系统', '', '2', '', '', '', '', '1', '/public/uploads/default/2025/04/02/1743577048415_source_01.jpg', '欢迎使用ChanCMS系统', 0, 2, '', '2025-04-02 14:28:02', '2025-08-12 17:51:17');
 
 -- ----------------------------
 -- Table structure for cms_articletag
@@ -78,11 +79,12 @@ CREATE TABLE `cms_articletag`  (
   INDEX `tid`(`tid`) USING BTREE,
   CONSTRAINT `cms_articletag_ibfk_1` FOREIGN KEY (`aid`) REFERENCES `cms_article` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `cms_articletag_ibfk_2` FOREIGN KEY (`tid`) REFERENCES `cms_tag` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '文章-标签表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '文章-标签表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cms_articletag
 -- ----------------------------
+INSERT INTO `cms_articletag` VALUES (2, 22, 2);
 
 -- ----------------------------
 -- Table structure for cms_category
@@ -207,11 +209,12 @@ CREATE TABLE `cms_message`  (
   `createdAt` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatedAt` datetime NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '留言' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '留言' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cms_message
 -- ----------------------------
+INSERT INTO `cms_message` VALUES (1, '1', '1', '1111', '1', '1', '1', '1', '2025-04-02 15:47:25', '2025-04-02 15:47:25');
 
 -- ----------------------------
 -- Table structure for cms_model
@@ -258,7 +261,7 @@ CREATE TABLE `cms_site`  (
 -- ----------------------------
 -- Records of cms_site
 -- ----------------------------
-INSERT INTO `cms_site` VALUES (1, 'ChanCMS', '/public/template/default/img/logo.svg', 'www.chancms.top', '867528315@qq.com', NULL, '皖ICP备2024030927号-1', '', '', 'ChanCMS', 'ChanCMS,nodejs,node,cms', 'ChanCMS是一款基于Express和MySQL研发的高质量实用型CMS管理系统。它具备多种类型网站开发，易扩展、基于模块化和插件化开发模式，适用于商用企业级程序开发。1', 'default', '1', NULL, '2025-08-01 22:18:18');
+INSERT INTO `cms_site` VALUES (1, 'ChanCMS1', '/public/template/default/img/logo.png', 'www.chancms.top2', '867528315@qq.com1', NULL, '皖ICP备2024030927号-11', '', '', 'ChanCMS演示站', 'ChanCMS演示站', 'ChanCMS是一款基于Express和MySQL研发的高质量实用型CMS管理系统。它具备多种类型网站开发，易扩展、基于模块化和插件化开发模式，适用于商用企业级程序开发。', 'default', '1', NULL, '2025-08-11 19:12:09');
 
 -- ----------------------------
 -- Table structure for cms_slide
@@ -274,11 +277,14 @@ CREATE TABLE `cms_slide`  (
   `createdAt` datetime NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatedAt` datetime NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '轮播图' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '轮播图' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of cms_slide
 -- ----------------------------
+INSERT INTO `cms_slide` VALUES (1, '01', '/public/template/huida/imgs/01.jpg', '', '<h2 class=\"text-4xl font-bold mb-4\">环保科技引领未来</h2>\n<p class=\"text-xl mb-6\">专业的环保解决方案提供商</p>\n<p><a href=\"about.html\" class=\"bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300\">联系我们</a></p>', NULL, '2024-09-17 10:52:05', '2025-07-06 09:30:15');
+INSERT INTO `cms_slide` VALUES (2, '02', '/public/template/huida/imgs/02.jpg', '', NULL, NULL, '2025-07-05 20:49:22', '2025-07-05 20:49:39');
+INSERT INTO `cms_slide` VALUES (3, '04', '/public/template/huida/imgs/04.jpg', '', NULL, NULL, '2025-07-05 20:51:11', '2025-07-06 09:26:00');
 
 -- ----------------------------
 -- Table structure for cms_tag
@@ -296,7 +302,7 @@ CREATE TABLE `cms_tag`  (
 -- Records of cms_tag
 -- ----------------------------
 INSERT INTO `cms_tag` VALUES (1, '图片', 'pic', 6);
-INSERT INTO `cms_tag` VALUES (2, 'chancms', 'chancms', 7);
+INSERT INTO `cms_tag` VALUES (2, 'chancms', 'chancms', 8);
 
 -- ----------------------------
 -- Table structure for ext_download
@@ -434,6 +440,36 @@ INSERT INTO `sys_config_type` VALUES (4, 'cms_config', '应用设置', '1', '站
 INSERT INTO `sys_config_type` VALUES (5, 'cms_data', '模板数据', '1', '模板数据', '2025-07-30 10:25:04', '2025-07-30 10:25:04');
 
 -- ----------------------------
+-- Table structure for sys_configs
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_configs`;
+CREATE TABLE `sys_configs`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type_code` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '关联配置类型',
+  `config_key` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '配置键',
+  `config_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '配置值',
+  `status` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '1' COMMENT '开启（1 开启 2 关闭）',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `config_key`(`config_key`) USING BTREE,
+  INDEX `sys_configs_ibfk_1`(`type_code`) USING BTREE,
+  CONSTRAINT `sys_configs_ibfk_1` FOREIGN KEY (`type_code`) REFERENCES `sys_config_type` (`type_code`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '系统配置表' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of sys_configs
+-- ----------------------------
+INSERT INTO `sys_configs` VALUES (1, 'wechat_minip', 'appid', '2', '1', '2025-03-07 14:50:13', '2025-03-07 17:31:24', '小程序appId');
+INSERT INTO `sys_configs` VALUES (2, 'wechat_minip', 'secret', '2', '1', '2025-03-07 14:54:36', '2025-03-07 17:31:24', '');
+INSERT INTO `sys_configs` VALUES (3, 'qiniu_oss', 'accessKey', 'accessKey1', '1', '2025-03-07 14:59:31', '2025-03-07 17:52:32', '');
+INSERT INTO `sys_configs` VALUES (4, 'qiniu_oss', 'secretKey', 'secretKey1', '1', '2025-03-07 14:59:51', '2025-03-07 17:52:32', '');
+INSERT INTO `sys_configs` VALUES (5, 'qiniu_oss', 'bucket', 'bucket1', '1', '2025-03-07 15:00:08', '2025-03-07 17:52:32', '');
+INSERT INTO `sys_configs` VALUES (6, 'cms_config', 'uploadWay', '1', '1', '2025-03-07 15:00:42', '2025-03-07 15:00:42', '');
+INSERT INTO `sys_configs` VALUES (8, 'qiniu_oss', 'domain', 'domain1', '1', '2025-03-07 17:48:50', '2025-03-07 17:52:32', NULL);
+
+-- ----------------------------
 -- Table structure for sys_loginlog
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_loginlog`;
@@ -452,11 +488,13 @@ CREATE TABLE `sys_loginlog`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `uid`(`uid`, `createdAt`) USING BTREE,
   CONSTRAINT `sys_loginlog_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `sys_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 143 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '登录日志' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 141 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '登录日志' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sys_loginlog
 -- ----------------------------
+INSERT INTO `sys_loginlog` VALUES (40, 1, '112.80.234.68', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2024-12-02 21:57:58');
+INSERT INTO `sys_loginlog` VALUES (41, 1, '112.80.234.68', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2024-12-05 22:29:03');
 INSERT INTO `sys_loginlog` VALUES (42, 1, '112.80.234.68', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2024-12-05 22:32:13');
 INSERT INTO `sys_loginlog` VALUES (43, 1, '112.80.234.68', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2024-12-05 23:47:47');
 INSERT INTO `sys_loginlog` VALUES (44, 1, '112.80.234.68', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2024-12-06 21:50:57');
@@ -551,13 +589,11 @@ INSERT INTO `sys_loginlog` VALUES (132, 14, '122.96.147.111', '中国', '江苏�
 INSERT INTO `sys_loginlog` VALUES (133, 11, '122.96.147.111', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-03-07 19:24:59');
 INSERT INTO `sys_loginlog` VALUES (134, 11, '122.96.147.111', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-03-08 10:24:52');
 INSERT INTO `sys_loginlog` VALUES (135, 11, '122.96.147.111', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-03-08 19:49:48');
-INSERT INTO `sys_loginlog` VALUES (136, 11, '122.96.147.111', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-03-15 09:41:12');
-INSERT INTO `sys_loginlog` VALUES (137, 14, '112.80.234.180', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-05-28 21:48:42');
-INSERT INTO `sys_loginlog` VALUES (138, 14, '112.80.234.180', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-05-29 00:16:13');
-INSERT INTO `sys_loginlog` VALUES (139, 14, '112.80.234.180', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-05-29 00:19:37');
-INSERT INTO `sys_loginlog` VALUES (140, 14, '122.96.42.16', '中国', '江苏省', '南京市', '', '中国联通', NULL, NULL, '2025-06-23 22:18:53');
-INSERT INTO `sys_loginlog` VALUES (141, 14, '112.80.235.202', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-08-01 22:14:27');
-INSERT INTO `sys_loginlog` VALUES (142, 14, '112.80.235.202', '中国', '江苏省', '南京市', '秦淮区', '中国联通', NULL, NULL, '2025-08-01 22:20:38');
+INSERT INTO `sys_loginlog` VALUES (136, 14, '221.226.158.155', '中国', '江苏省', '南京市', '玄武区', '中国电信', NULL, NULL, '2025-04-01 09:58:04');
+INSERT INTO `sys_loginlog` VALUES (137, 14, '221.226.158.155', '中国', '江苏省', '南京市', '玄武区', '中国电信', NULL, NULL, '2025-04-01 09:58:53');
+INSERT INTO `sys_loginlog` VALUES (138, 11, '221.226.158.155', '中国', '江苏省', '南京市', '玄武区', '中国电信', NULL, NULL, '2025-04-01 09:59:24');
+INSERT INTO `sys_loginlog` VALUES (139, 11, '221.226.158.154', '中国', '江苏省', '南京市', '玄武区', '中国电信', NULL, NULL, '2025-04-02 14:02:06');
+INSERT INTO `sys_loginlog` VALUES (140, 14, '101.125.4.179', '中国', '', '', '', '', NULL, NULL, '2025-08-11 19:10:43');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -1071,6 +1107,27 @@ CREATE TABLE `user_social_login`  (
 
 -- ----------------------------
 -- Records of user_social_login
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for user_verification_codes
+-- ----------------------------
+DROP TABLE IF EXISTS `user_verification_codes`;
+CREATE TABLE `user_verification_codes`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '邮箱地址',
+  `code` char(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '6位验证码',
+  `status` tinyint(4) NOT NULL DEFAULT 1 COMMENT '1-未使用\r\n2-已使用 3-已过期',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `expires_at` datetime NULL DEFAULT NULL COMMENT '过期时间',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `udx_email_scene`(`email`) USING BTREE,
+  INDEX `idx_status`(`status`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_verification_codes
 -- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -1,4 +1,6 @@
 const { knex } = Chan;
+import BaseService from "./base.js";
+
 let model = "cms_category";
 let db = Chan.Service(knex, model);
 const pageSize = 100;

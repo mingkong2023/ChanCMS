@@ -1,7 +1,9 @@
 const {
+ 
   helper: {
     api: { success },
   },
+  config
 } = Chan;
 import Site from "../service/Site.js";
 let SiteController = {

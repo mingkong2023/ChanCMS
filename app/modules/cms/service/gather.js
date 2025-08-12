@@ -1,5 +1,7 @@
 const { knex } = Chan;
+import BaseService from './base.js';
 import {isValidTargetUrl} from '../../../middleware/guard.js';
+
 
 let model = "plus_gather";
 let db = Chan.Service(knex, model);

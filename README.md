@@ -33,17 +33,10 @@ ChanCMS是一款基于Node、Express5、MySQL、Vue3研发的高质量实用型C
 * 本地上传&七牛云上传
 * 日志功能
 
-## ⛱️软件架构
+## ⛱️软件环境
 
-* nodejs v20.16.0+
-* express 5.1+
-* mysql v5.7.26
-* knex (sql操作)
-* art-tempate v4.13.2+
-* pm2 v5.2.2
-* jwt
-* pm2 (prd)
-* nodemon (dev)
+* nodejs v22.18.0
+* pm2 v6.0.8
 
 ### 项目架构
 

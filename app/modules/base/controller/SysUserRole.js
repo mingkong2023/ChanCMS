@@ -1,3 +1,11 @@
+const {
+  config,
+  helper: {
+    utils: { setToken, getToken, bcrypt },
+    api: { success, fail },
+  },
+} = Chan;
+
 import SysUserRole from "../service/SysUserRole.js";
 
 let SysUserRoleController =  {

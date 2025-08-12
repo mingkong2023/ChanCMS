@@ -1,11 +1,11 @@
 {
   "name": "chancms",
   "type": "module",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "ChanCMS是一款基于Node、Express5、MySQL、Vue3研发的高质量实用型CMS系统。",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js",
+    "dev": "node --env-file=.env.dev --watch app.js",
     "clear": "node timer.js",
     "prd": "pm2 start pm2.json"
   },
@@ -15,21 +15,18 @@
   "author": "\"明空\"",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.9.0",
+    "axios": "^1.11.0",
     "bcryptjs": "^3.0.2",
-    "chanjs": "^2.0.0",
-    "cheerio": "^1.0.0",
+    "chanjs": "^2.0.2",
+    "cheerio": "^1.1.2",
     "dayjs": "^1.11.13",
+    "dotenv": "^17.2.1",
     "express-safe": "^1.0.9",
     "iconv-lite": "^0.6.3",
     "jsonwebtoken": "^9.0.2",
-    "multer": "^1.4.5-lts.2",
+    "multer": "^2.0.2",
     "node-schedule": "^2.1.1",
     "qiniu": "^7.14.0",
-    "rimraf": "^6.0.1",
-    "serve-favicon": "^2.5.0"
-  },
-  "devDependencies": {
-    "nodemon": "3.1.10"
+    "serve-favicon": "^2.5.1"
   }
 }

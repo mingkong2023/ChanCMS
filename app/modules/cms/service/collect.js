@@ -2,6 +2,7 @@
 const { knex } = Chan;
 import axios from 'axios';
 import iconv from 'iconv-lite';
+import BaseService from './base.js';
 
 let model = "plus_collect";
 let db = Chan.Service(knex, model);

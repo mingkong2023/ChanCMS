@@ -3,11 +3,9 @@
         {
             "name": "ChanCMS",
             "script": "app.js",
-            "watch": [
-                "app"
-            ],
+            "watch": false,
             "ignore_watch": [
-                "app/public"
+                "public"
             ],
             "log_date_format": "YYYY-MM-DD HH:mm Z",
             "error_file": "./logs/pm2-err.log",
@@ -16,10 +14,10 @@
             "exec_mode": "fork",
             "max_memory_restart": "200M",
             "autorestart": true,
+            "instances": 1,
             "env": {
-                "NODE_ENV": "prd"
-            },
-            "instances": 1
+                "ENV_FILE": ".env.prd"
+            }
         }
     ]
 }

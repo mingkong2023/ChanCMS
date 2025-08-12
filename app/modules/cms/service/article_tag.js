@@ -1,3 +1,4 @@
+import BaseService from './base.js';
 const { knex } = Chan;
 let model = "cms_articletag";
 let db = Chan.Service(knex, model);

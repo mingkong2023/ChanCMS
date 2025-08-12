@@ -14,7 +14,7 @@ import {
   articleGetParams,
   articleDataParse,
   searchParams,
-  searchDataParse,tagParams,tagDataParse
+  searchDataParse,tagParams,tagDataParse,parseJsonFields
 } from "../utils/index.js";
 
 let HomeController = {
@@ -71,7 +71,7 @@ let HomeController = {
       const article = await common.article(id);
       
       if(article?.field?.length>0){
-        article.field = this.parseJsonFields(article.field[0]);
+        article.field = parseJsonFields(article.field[0]);
       }
       if (!article) {
         await res.render(`${template}/404.html`);

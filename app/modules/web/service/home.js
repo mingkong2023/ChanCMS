@@ -9,7 +9,7 @@ import { getApiCalls } from '../utils/index.js';
 const home = {
   async init() {
     try {
-      const config = Chan.config.data.init;
+      const config = Chan.config?.data?.init || {};
       const apiCalls = getApiCalls(
         config,
         {},

@@ -1,3 +1,8 @@
+const {
+  helper: {
+    api: { success },
+  },
+} = Chan;
 import SysRoleMenu from "../service/SysRoleMenu.js";
 
 let SysRoleMenuController = {

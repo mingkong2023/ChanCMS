@@ -19,7 +19,7 @@ let CodeFileController = {
       if(type == "html"){
         fullPath = path.join(APP_PATH, "/modules/web/view", req.app.locals.template);
       }else {
-        fullPath = path.join(APP_PATH, "/public/template", req.app.locals.template);
+        fullPath = path.join(ROOT_PATH, "/public/template", req.app.locals.template);
       }
       const tree = await getFileTree(fullPath);
       res.json({ ...success, data: tree });
@@ -36,7 +36,7 @@ let CodeFileController = {
       if (paths) {
         fullPath =  path.join(APP_PATH, paths);
       }else{
-        fullPath =  path.join(APP_PATH, "/public/uploads", req.app.locals.template);
+        fullPath =  path.join(ROOT_PATH, "/public/uploads", req.app.locals.template);
       }
       const tree = await getFileTree(fullPath,false);
       res.json({ ...success, data: tree });
@@ -49,7 +49,7 @@ let CodeFileController = {
   async content(req, res, next) {
     try {
       const filePath = req.query.path;
-      if (!isPathSafe(filePath,APP_PATH)) {
+      if (!isPathSafe(filePath,APP_PATH)  && !isPathSafe(filePath,ROOT_PATH)) {
         return res.status(403).json({ error: "访问路径不安全" });
       }
       const content = await readFileContent(filePath);

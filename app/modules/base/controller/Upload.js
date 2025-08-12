@@ -1,5 +1,8 @@
 const {
   config,
+  helper: {
+    api: { success, fail },
+  },
 } = Chan;
 
 const { chunkConfig,chunk } = Chan.helper.upload;
