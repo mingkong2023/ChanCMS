@@ -3,10 +3,6 @@ const {
   config: { template, env, cache },
 } = Chan;
 
-let Site = Chan.Service(knex, "cms_site");
-let Config = Chan.Service(knex, "sys_config");
-
-const pageSize = 100;
 export default () => {
   return async (req, res, next) => {
     try {

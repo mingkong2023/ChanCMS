@@ -26,7 +26,7 @@ let SysMenuController ={
         if (!token) {
           return res.json({ ...fail, msg: "请先登录" });
         }
-        const user = await getToken(token, config.token.KEY);
+        const user = await getToken(token, config.JWT_SECRET);
         id = user.uid;
       }
       const data = await SysMenu.allRouter(id);
@@ -44,7 +44,7 @@ let SysMenuController ={
         if (!token) {
           return res.json({ ...fail, msg: "请先登录" });
         }
-        const user = await getToken(token, config.token.KEY);
+        const user = await getToken(token, config.JWT_SECRET);
         id = user.uid;
       }
       const data = await SysMenu.allPerms(id);
@@ -75,7 +75,7 @@ let SysMenuController ={
     }
   },
 
-  // // 删除
+  //删除
   async delete(req, res, next) {
     try {
       const { id } = req.query;

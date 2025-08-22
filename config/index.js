@@ -1,7 +1,8 @@
-﻿import { app, port, cors, JSON_LIMIT } from "./app.js";
+﻿import { app, port, cors, BODY_LIMIT } from "./app.js";
 import { cache } from "./cache.js";
-import { secretcms, token } from "./cookie.js";
+import { PASSWORD_SALT } from "./salt.js";
 import { db } from "./database.js";
+import { jwt } from "./jwt.js";
 import { logger } from "./log.js";
 import { modules } from "./modules.js";
 import { perms } from "./perm.js";
@@ -14,10 +15,10 @@ let config = {
   ...app,
   port,
   cors,
-  JSON_LIMIT,
+  BODY_LIMIT,
   cache,
-  secretcms,
-  token,
+  PASSWORD_SALT,
+  ...jwt,
   db,
   logger,
   modules,

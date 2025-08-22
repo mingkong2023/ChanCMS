@@ -167,7 +167,7 @@ export const getApiCalls = (
   common // mysql通用查询方法
 ) => {
   // let apiCalls = {};
-  // // 构建要调用的api对象
+  //构建要调用的api对象
   // for (let key in config) {
   //   if (config[key].show !== false) {
   //     let method = config[key].method;

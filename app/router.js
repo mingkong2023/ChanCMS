@@ -10,7 +10,7 @@ const routers = (app, router, config) => {
   //机器人抓取
   router.get("/robots.txt", function (req, res, next) {
     res.type("text/plain");
-    res.sendFile(path.join(APP_PATH, "/public/robots.txt"));
+    res.sendFile(path.join(ROOT_PATH, "/public/robots.txt"));
   });
 
   //404处理

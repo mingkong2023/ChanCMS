@@ -1,6 +1,6 @@
 const {
   config: {
-    token: { KEY, TIME },
+    JWT_SECRET, JWT_EXPIRES_IN,
   },
   helper: {
     api: { success },
@@ -14,7 +14,7 @@ let TokenController = {
     try {
       const username = req.locals.username;
       const uid = req.locals.uid;
-      const token = setToken({ username, uid }, KEY, TIME);
+      const token = setToken({ username, uid }, JWT_SECRET, JWT_EXPIRES_IN);
       res.json({ ...success, data: { token } });
     } catch (err) {
       next(err);
@@ -25,7 +25,7 @@ let TokenController = {
   async check(req, res, next) {
     try {
       const token = req.query.token;
-      const res = await getToken(token, KEY);
+      const res = await getToken(token, JWT_SECRET);
       res.json({ ...success, data: { ...res } });
     } catch (err) {
       next(err);

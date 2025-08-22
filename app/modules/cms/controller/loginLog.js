@@ -12,7 +12,7 @@ let LoginLogController = {
   async create(req, res, next) {
     try {
       const token = req.cookies.token;
-      const user = await getToken(token, config.token.KEY);
+      const user = await getToken(token, config.JWT_SECRET);
       let body = {
         uid: user.uid,
         ...req.body,

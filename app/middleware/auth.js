@@ -1,7 +1,10 @@
 const {
   knex,
   config: {
-    token: { KEY, TIME, REFRESH },
+    JWT_SECRET,
+    JWT_EXPIRES_IN,
+    JWT_REFRESH,
+  
   },
   helper: {
     utils: { setToken, getToken },
@@ -15,15 +18,15 @@ export default (permsStr) => {
 
     if (token) {
       try {
-        const { username, uid, exp } = await getToken(token, KEY);
+        const { username, uid, exp } = await getToken(token, JWT_SECRET);
 
-        if (username && uid && REFRESH) {
+        if (username && uid && JWT_REFRESH) {
           // 计算 token 剩余有效时间
           const currentTime = Math.floor(Date.now() / 1000);
           const remainingTime = exp - currentTime;
           const refreshThreshold = 30 * 60; // 30分钟
           if (remainingTime < refreshThreshold) {
-            const newToken = setToken({ username, uid }, KEY, TIME);
+            const newToken = setToken({ username, uid }, JWT_SECRET, JWT_EXPIRES_IN);
             res.cookie("token", newToken, { httpOnly: true });
           }
         }

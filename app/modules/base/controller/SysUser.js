@@ -26,8 +26,8 @@ let SysUserController = {
           // 设置token
           const token = setToken(
             { uid: id, username },
-            config.token.KEY,
-            config.token.TIME
+            config.JWT_SECRET,
+            config.JWT_EXPIRES_IN
           );
           const data = { status, username, token };
           // 获取用户菜单
@@ -60,7 +60,7 @@ let SysUserController = {
   async create(req, res, next) {
     try {
       const body = req.body;
-      body.password = await bcrypt.hash(body.password, config.secretcms.key);
+      body.password = await bcrypt.hash(body.password, config.PASSWORD_SALT);
       const data = await SysUser.create(body);
       res.json({ ...success, data: data });
     } catch (err) {
@@ -77,7 +77,7 @@ let SysUserController = {
         if (!token) {
           return res.json({ ...fail, msg: "请先登录" });
         }
-        const user = await getToken(token, config.token.KEY);
+        const user = await getToken(token, config.JWT_SECRET);
         id = user.uid;
       }
       const data = await SysUser.detail(id);
@@ -87,7 +87,7 @@ let SysUserController = {
     }
   },
 
-  // // 删除
+  //删除
   async delete(req, res, next) {
     try {
       const { id } = req.query;
@@ -104,7 +104,7 @@ let SysUserController = {
       let { userId, username, status, role_id, password } = req.body;
       let params = { userId, username, status, role_id };
       if (password) {
-        password = await bcrypt.hash(password, config.secretcms.key);
+        password = await bcrypt.hash(password, config.PASSWORD_SALT);
         params.password = password;
       }
       const data = await SysUser.update(params);

@@ -53,7 +53,7 @@ let ConfigController =  {
     }
   },
 
-  // // 删除
+  //删除
   async delete(req, res, next) {
     try {
       const { id } = req.query;

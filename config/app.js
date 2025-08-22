@@ -11,4 +11,4 @@ export let cors = {
   origin: process.env.CORS_ORIGIN || "*", //或者['http://localhost:8080', 'http://localhost:8081']
 };
 
-export let JSON_LIMIT = process.env.JSON_LIMIT || "100kb";
+export let BODY_LIMIT = process.env.BODY_LIMIT || "100kb";

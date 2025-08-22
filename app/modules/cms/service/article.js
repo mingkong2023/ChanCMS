@@ -460,7 +460,7 @@ let ArticleService ={
       //   "select count(*) AS count from cms_article where TO_DAYS(NOW())-TO_DAYS(updatedAt)<=1";
       // const yesterday = await knex.raw(yesterdayStr);
 
-      // // 今天
+      //今天
       // const todayStr =
       //   "select count(*) AS count from cms_article where TO_DAYS(NOW())=TO_DAYS(NOW())";
       // const today = await knex.raw(todayStr);
@@ -475,12 +475,12 @@ let ArticleService ={
       //   "SELECT COUNT(*) AS count from cms_article where DATE_SUB(CURDATE(),INTERVAL 30 DAY)<=DATE(updatedAt)";
       // const month = await knex.raw(monthStr);
 
-      // // 季度
+      //季度
       // const quarterStr =
       //   "SELECT COUNT(*) AS count from cms_article where QUARTER(createdAt)=QUARTER(NOW())";
       // const quarter = await knex.raw(quarterStr);
 
-      // // 年
+      //年
       // const yearStr =
       //   "SELECT COUNT(*) AS count from cms_article where YEAR(createdAt)=YEAR(NOW())";
       // const year = await knex.raw(yearStr);

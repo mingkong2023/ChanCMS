@@ -17,8 +17,8 @@ class WechatController {
       // 设置token
       const token = setToken(
         { openid: openid },
-        config.token.KEY,
-        config.token.TIME
+        config.JWT_SECRET,
+        config.JWT_EXPIRES_IN
       );
       // console.log(req.headers)
       // 加密返回token,获取token解密然后通过openid或者unionid来查询

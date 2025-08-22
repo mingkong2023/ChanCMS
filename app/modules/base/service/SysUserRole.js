@@ -2,7 +2,7 @@ const {
   knex
 } = Chan;
 
-let model = "sys_user";
+let model = "sys_user_role";
 let db = Chan.Service(knex,model);
 const pageSize = 100;
 let SysUserRoleService  = {
