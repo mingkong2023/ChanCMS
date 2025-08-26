@@ -63,7 +63,7 @@ let CodeFileController = {
   async save(req, res, next) {
     try {
       const { path: filePath, content } = req.body;
-      if (!isPathSafe(filePath, APP_PATH)) {
+       if (!isPathSafe(filePath,APP_PATH)  && !isPathSafe(filePath,ROOT_PATH)) {
         return res.status(403).json({ error: "访问路径不安全" });
       }
       await saveFileContent(filePath, content);

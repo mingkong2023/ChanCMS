@@ -1,17 +1,16 @@
-const {loadController } = Chan.helper;
+const { loadController } = Chan.helper;
 let controller = await loadController("api");
-
 export default (app, router, config) => {
   router.get("/site", controller.Api.site);
-  router.get("/frag", controller.Api.frag);
-  router.get("/tag", controller.Api.tag);
-  router.get("/friendlink", controller.Api.friendlink);
+  router.get("/frag", controller.Api.fragList);
+  router.get("/tag", controller.Api.getTag);
+  router.get("/friendlink", controller.Api.getFriendlink);
   router.get("/category", controller.Api.category);
   router.get("/getArticleList", controller.Api.getArticleList);
   router.get("/getArticleListByCid", controller.Api.getArticleListByCid);
   router.get("/getArticleTag", controller.Api.getArticleTag);
   router.get(["/list", "/page"], controller.Api.list);
-  router.get("/article", controller.Api.article);
+  router.get("/article", controller.Api.getArticle);
   router.get("/banner", controller.Api.banner);
   router.get("/pv", controller.Api.pv);
   router.get("/articleImg", controller.Api.articleImg);
@@ -25,5 +24,4 @@ export default (app, router, config) => {
 
   //配置前缀
   app.use("/api/v1", router);
-
 };

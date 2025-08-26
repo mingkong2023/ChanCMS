@@ -23,7 +23,7 @@ let ModelService = {
           .raw(sql_create, [])
           .transacting(trx);
         // 新增内容
-        const sql_insert = `INSERT INTO ${model} (model,tableName,status,remark) VALUES(?,?,?,?)`;
+        const sql_insert = `INSERT INTO cms_model (model,tableName,status,remark) VALUES(?,?,?,?)`;
         const result = await knex
           .raw(sql_insert, [model, tableName, status ,remark])
           .transacting(trx);

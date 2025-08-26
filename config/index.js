@@ -1,4 +1,4 @@
-﻿import { app, port, cors, BODY_LIMIT } from "./app.js";
+﻿import app from "./app.js";
 import { cache } from "./cache.js";
 import { PASSWORD_SALT } from "./salt.js";
 import { db } from "./database.js";
@@ -11,11 +11,8 @@ import { statics } from "./static.js";
 import { upload } from "./upload.js";
 import { views } from "./view.js";
 
-let config = {
+export default {
   ...app,
-  port,
-  cors,
-  BODY_LIMIT,
   cache,
   PASSWORD_SALT,
   ...jwt,
@@ -28,5 +25,3 @@ let config = {
   upload,
   views,
 };
-
-export default config;

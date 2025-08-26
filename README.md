@@ -2,6 +2,8 @@
 
 ChanCMS是一款基于Node、Express5、MySQL、Vue3研发的高质量实用型CMS系统。轻量、灵活、稳定、高性能、易扩展，让开发更简单。
 
+> 🌟 开发友好，推崇JS优先。适合全栈开发者，独立而高效、优雅的代码、极致的性能、稳定的生产实践，灵活强大。
+
 ## 🌈系统特色
 
 * 自研。基于自研chanjs轻量级mvc框架实现，轻量、灵活、稳定、高性能、可持续。
@@ -38,56 +40,76 @@ ChanCMS是一款基于Node、Express5、MySQL、Vue3研发的高质量实用型C
 * nodejs v22.18.0
 * pm2 v6.0.8
 
-### 项目架构
+## 🛠 技术栈
 
-```JavaScript
-|- data
+| 技术 | 说明 |
+|------|------|
+| **Express** | 轻量级web框架  |
+| **ChanJS**  | 基于Express轻量级mvc框架 |
+| **Zod**     | Schema 校验库，保障数据安全 |
+| **Node.js** | 运行时环境（建议 v22.18.0+） |
+| **Knex.js** | SQL 查询构建器 + 迁移工具 |
+| **MySQL**   | 关系型数据库 |
+| **PM2**     | 生产环境进程管理与守护 |
+
+### ✨项目架构 遵循约定优于配置 JS优先
+
+函数式架构，模块化设计，易于扩展和重构。
+
+```javascript
 |- app
-    |- config
-    |- extend 
-    |- middleware 
-    |- modules
-        |-api 通用api，提供给h5 app 小程序等调用 
-        |-- controller
-        |-- service
-        |-- middleware(可选)
-        |-- router.js
-        |-web 模板渲染
-        |-- controller
-        |-- middleware(可选)
-        |-- service
-        |-- view
-        |-- router.js
-        |-base 基础模块RBAC 权限管理
-        |-- controller
-        |-- middleware(可选)
-        |-- service
-        |-- view
-        |-- router.js
-        |-cms 后台cms接口
-   |- plugins 
-        |- plus-pdf 插件——pdf按需加载
-        |-- controller
-        |-- service(可选)
-        |-- middleware(可选)
-        |-- router.js
-        |- plus-wechat 插件——微信小程序登录
-        |-- controller
-        |-- service(可选)
-        |-- middleware(可选)
-        |-- router.js
-  *** 
- |- public
- |- utils
- |- router.js
- app.js
- ```
+    |- helper      //工具函数
+    |- common      //通用函数库(分页, 文件上传, 加密, 解密, 校验, 转换, 等)
+    |- extend      //第三方组件扩展（hono和第三方组件的扩展）
+    |- middleware  //全局中间件
+    |- modules     //多模块mvc
+        |- api 
+            |- controller 
+            |- service 
+            |- guard  //权限控制 (可选) 
+            |- middleware  //模块中间件 (可选)
+            |- model  //数据库模型 (可选)
+            |- view //模板文件 (可选)
+            |- router.js 
+        |- base 
+            |- controller 
+            |- service 
+            |- view 
+            |- router.js
+        |- cms 
+            |- controller 
+            |- service 
+            |- view 
+            |- router.js
+        |- web 
+            |- controller 
+            |- service 
+            |- view 
+            |- router.js
+    |- plugin //插件
+        |- plus-module1 
+            |- controller 
+            |- service 
+            |- view 
+            |- router.js 
+        |- module2 
+            |- controller 
+            |- service 
+            |- view 
+            |- router.js
+|- config 
+|- public
+|- index.js
+|-.env.dev
+|-.env.prd
+```
 
 * **注:ChanCMS自带基于vue3+element-plus+js研发的后台管理界面,如果不满足你编码风格，如native等其它UI，或热衷于如react + antd +TS技术，可以自行调用接口进行二次开发**
 * **后台管理ChanAdmin源码以及接口参考 [https://gitee.com/yanyutao0402/ChanAdmin](https://gitee.com/yanyutao0402/ChanAdmin)**
 
 ### 案例🍅️
 
+* [北京辉达科技](http://www.huidaep.com/ )
 * [北京诺丰科技](http://www.novontrade.com/ )
 * [北京智慧城市供需对接平台](https://gongxudj.com/#/headerNav/newHome)
 * [上海昂翊信息](http://www.angyi-iot.com/)
